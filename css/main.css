@@ -711,3 +711,24 @@ span.fail:after {
 #main {
     display: none;
 }
+
+.social-icons {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.social-icon {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 24px;
+    color: white; /* You can use your custom color variable here */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--color-link-hover); /* You can use your custom hover color variable here */
+}
+
