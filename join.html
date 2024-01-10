@@ -57,29 +57,45 @@
                     </p>
                     <div class="row  hackerFont">
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="reciept_id" placeholder="PLACEHOLDER">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="team_name" placeholder="PLACEHOLDER">
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" id="password" placeholder="PLACEHOLDER">
-                                <small id="passHelp" class="form-text text-muted">Make sure nobody's behind you</small>
-                            </div>
-                            <div class="custom-control custom-checkbox my-4">
-                                <input type="checkbox" class="custom-control-input" id="solemnly-swear">
-                                <label class="custom-control-label" for="solemnly-swear">I solemnly swear that I am up to no good.</label>
-                            </div>
-                        </div>
+                            <script type="text/javascript">
+                                function showButton() {
+                                    var checkbox = document.getElementById("solemnly-swear");
+                                    var button = document.getElementById("submit-button");
+                            
+                                    if (checkbox.checked) {
+                                        button.style.display = "block";
+                                    } else {
+                                        button.style.display = "none";
+                                    }
+                                }
+                            </script>
+                            
+                            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { window.location='welcome'; }"></iframe>
+                            
+                            <form action="https://docs.google.com/forms/d/e/1FAIpQLScCsqAA_Pf0j3RjoszEygkng4TRt4HirKVIjdLa1BIDwRiTpQ/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
+                                <div class="form-group">
+                                    <input name="entry.1706740114" type="text" class="form-control" placeholder="Name">
+                                </div>
+                                <div class="form-group">
+                                    <input name="entry.1810116368" type="text" class="form-control" placeholder="USN">
+                                </div>
+                                <div class="form-group">
+                                    <input name="entry.1855075302" type="text" class="form-control" placeholder="E-Mail">
+                                </div>
+                                <div class="form-group">
+                                    <input name="entry.851933382" type="text" class="form-control" placeholder="Phone">
+                                    <small id="passHelp" class="form-text text-muted">Make sure nobody's behind you</small>
+                                </div>
+                                <div class="custom-control custom-checkbox my-4">
+                                    <input type="checkbox" class="custom-control-input" id="solemnly-swear" onchange="showButton()">
+                                    <label class="custom-control-label" for="solemnly-swear">I agree to abide by the preamble.</label>
+                                </div>
+                                <div class="col-xl-12" id="submit-button" style="display:none;">
+                                    <input class="btn btn-outline-danger btn-shadow px-3 my-2 ml-0 ml-sm-1 text-left typewriter" type="submit" value="execute JoinProtocol" />
+                                </div>
+                            </form>
+                        </div>                            
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xl-12">
-                    <button class="btn btn-outline-danger btn-shadow px-3 my-2 ml-0 ml-sm-1 text-left typewriter" onclick="window.location.href='workingonit.html';">
-                            <h4>execute JoinProtocol</h4>
-                    </button>
                 </div>
             </div>
             <div class="social-icons">
