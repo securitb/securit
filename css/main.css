@@ -38,7 +38,13 @@
     transition: all 0.3s ease;
     letter-spacing: 0.125em;
 }
+.burgerdropdown{
+   display:none;
+}
 
+.burgerdropdownv{
+    display:flex;
+}
 .collapsing {
     position: relative;
     height: 0;
