@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome file</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="more-customization-and-tools">More customization and tools</h1>
+<p><code>Note: This is a personal opinion of the reader to use the following commands/tools. Even if you don't prefer to use them explicitly, you should know that these tools/commands exist, so even if you don't execute the commands, just go through them.</code></p>
+<h2 id="keyboard-remapping-using-windows-powertoys">Keyboard remapping using windows powertoys</h2>
+<p>Yes, the name is self-explanatory. Keyboard remapping is just remapping the functionality of keys of your keyboard. So, if you want your <code>shift</code> key to act as <code>ctrl</code> key, you can do this with keyboard remapping( Remember, remapping <code>shift</code> to <code>ctrl</code> won’t automatically remap <code>ctrl</code> to <code>shift</code>. You need to do that explicitly, like you did with the other.)</p>
+<h3 id="a-use-case">A use-case</h3>
+<p>We have demonstrated how NVIM and VIM are better editors than traditional ones. You may have noticed that we are required to use the <code>esc</code> key multiple times. So you can remap <code>esc</code> key to some other key you use less often( it’s the <code>Caps Lock</code> key in my case, lol).</p>
+<h3 id="keyboard-remapping">Keyboard remapping</h3>
+<ul>
+<li>For this we will be using Windows PowerToys from Microsoft Store. So, go ahead and install that.</li>
+<li>Open the app and go to Keyboard Manager.</li>
+<li>Click on <code>Keys</code> or <code>Shortcut</code>, which ever you want to change. Select the keys and complete the changes.</li>
+<li>All the remapped keys and their assigned key is shown on the Keyboard Manager menu.</li>
+</ul>
+<h2 id="feh">feh</h2>
+<p><code>feh</code> is a lightweight image viewer for the command line. Imagine you are accessing a server, and you find a piece of data which is an image. How will you open it from the command line? The server won’t have such application to open the image and nor can you copy the data everytime to your computer to view it. So a lightweight image viewer like <code>feh</code> is of great help in such cases.</p>
+<h3 id="installation">Installation</h3>
+<p>You can install the latest release using</p>
+<pre class=" language-bash"><code class="prism  language-bash">brew <span class="token function">install</span> feh
+</code></pre>
+<p>Or, if you are fine with an older version, use <code>apt</code>.( Why does apt usually have older versions? Check out the heading “How NOT to install NVIM” from <a href="https://securit.club/archives/InstallingNeoVIM">here</a>)</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">sudo</span> apt <span class="token function">install</span> feh
+</code></pre>
+<h3 id="using-feh">Using feh</h3>
+<p>Use the following command to open any image on command line</p>
+<pre class=" language-bash"><code class="prism  language-bash">feh <span class="token operator">&lt;</span>address_of_image<span class="token operator">&gt;</span>
+</code></pre>
+<p>Replace &lt;address_of_image&gt; with actual address of the image. If in the same directory directly use the image name.</p>
+<h3 id="credits-securit-core-">Credits: secuRIT Core :)</h3>
+<p><a href="https://github.com/ChrompyCoder/secuRIT-event-documentations./blob/main/MoreCustomizationAndTools01.html">Edit this page</a></p>
+</div>
+</body>
+
+</html>

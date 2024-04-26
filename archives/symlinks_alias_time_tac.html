@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome file</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="symlinks-alias-time-statistics-and-tac">Symlinks, alias, time statistics and tac( Common terms 2)</h1>
+<p>In this tutorial, you will learn the above features of wsl and how to implement them.<br>
+Don’t know what is wsl? Check out <a href="https://securit.club/archives/e1">this</a> page.</p>
+<h2 id="symlinks">Symlinks</h2>
+<p>Symlinks, also called as symbolic links or soft link and terms are used interchangeably.<br>
+You might remember that in the tutorial from <a href="https://securit.club/archives/InstallingNeoVIM">installing NeoVIM</a> we had used Symlinks to associate NVIM with NeoVIM such that if you call <code>nvim</code> it actually functions as <code>neovim</code>.<br>
+So symlinks associate one file with the other. So when you create a symlink, a file is created with the name you specify. And when you run commands with that name, the file forwards the data to the file it is associated with. That’s why whenever you type <code>nvim</code> it calls <code>neovim</code>. This is permanent, and you can use this across different shells.</p>
+<h3 id="syntax">Syntax:</h3>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">ln</span> -s /path/to/actual/file /path/to/symlink 
+</code></pre>
+<h3 id="to-remove-symlink">To remove symlink</h3>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">ln</span> -l /path/to/symlink
+</code></pre>
+<h2 id="alias">Alias</h2>
+<p>Alias is a replacement command, that is, when you type in the alias name it will replace the text with the assigned text. Imagine you want to go to a certain directory often so instead of typing in the address using the <code>cd</code> command, you can assign an alias which will do the work for you.</p>
+<h3 id="syntax-for-assigning-an-alias">Syntax for assigning an alias</h3>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">alias</span> <span class="token operator">&lt;</span>alias_nm<span class="token operator">&gt;=</span><span class="token operator">&lt;</span>replacement_text_or_command<span class="token operator">&gt;</span>
+</code></pre>
+<p>Do not add space between alias name and its replacement text.</p>
+<h3 id="a-common-use-case">A common use-case</h3>
+<p>A common use-case of alias is when you want to go to a certain directory regularly, but you are too lazy to type in the full name, and it’s annoying, you can assign an alias to the address.</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">alias</span> cdd<span class="token operator">=</span><span class="token string">"cd /path/to/desired/directory"</span>
+</code></pre>
+<p>After assigning the above command if you run <code>cdd</code> it will change the directory automatically.</p>
+<h3 id="which-alias">Which alias</h3>
+<p>If you forget what your alias actually runs you can use the following command</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">alias</span> <span class="token operator">&lt;</span>alias_nm<span class="token operator">&gt;</span>
+</code></pre>
+<p>this will show you the alias replacement text( replace &lt;alias_nm&gt; with actual alias name).<br>
+In the above case when you run <code>alias cdd</code>, the output will be <code>cdd='cd /path/to/desired/directory'</code>.</p>
+<p>To check all the aliases in your terminal you can run the following command</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">alias</span>
+</code></pre>
+<p>This will show you a list of all the aliases present.</p>
+<h3 id="removing-aliases">Removing aliases</h3>
+<p>To remove any alias, use the following command</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">unalias</span> <span class="token operator">&lt;</span>alias_nm<span class="token operator">&gt;</span>
+</code></pre>
+<h3 id="problem-with-assigning-an-alias-and-the-fix">Problem with assigning an alias and the Fix</h3>
+<p>When ever you assign an alias it is temporary. So when you close the terminal window, it will destroy the alias.<br>
+To fix this problem, you can put the alias command in the .configuration file of your terminal.<br>
+The following command will demonstrate this for <code>oh my zsh!</code>( for other shell frameworks, try finding it out yourself or contact secuRIT on <a href="https://t.me/securitb">telegram</a>)</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token keyword">echo</span> <span class="token string">"alias &lt;alias_nm&gt;=&lt;text_replacement_or_command"</span> <span class="token operator">&gt;&gt;</span> ~/.zshrc
+</code></pre>
+<p>Restart your wsl/terminal and try using the alias, it will work.</p>
+<h2 id="difference-between-alias-and-symlink">Difference between Alias and symlink</h2>
+<p>At first glance, both alias and symbolic link look the same, but there are a few key differences which we will point out here-</p>
+<ul>
+<li>Across shell usage- Symbolic link will work in any shell whereas alias are shell specific that is, they won’t work if you change your shell.</li>
+<li>Temporary assigning- Alias are a temporary assignment, and you need to change the .configuration file if you want it to work always, else when you close your terminal the alias is destroyed, while symbolic link are permanent and system file dependent.</li>
+<li>File system dependency- Symbolic link is a file which forwards the command to the associated file, so when you move/copy/delete the associated file or change any of the content, the link will get destroyed and symlink won’t work anymore. This doesn’t happen with alias.</li>
+</ul>
+<h2 id="time-statistics">Time statistics</h2>
+<p>Run the following command</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">time</span> curl https://securit.club <span class="token operator">&amp;</span><span class="token operator">&gt;</span> /dev/null
+</code></pre>
+<p>You will get something like <code>curl https://securit.club &amp;&gt; /dev/null 0.08s user 0.06s system 24% cpu 0.576 total</code>. We will be discussing the user time, system time, total/real time.<br>
+The time taken for the program to finish from start is called total/real time( here, 0.576s).<br>
+The time spent doing user code and user related task is called user time. This includes running the given code, showing the output using GUI and such( here, 0.08s).<br>
+The time spent doing kernel related task are called system time or sys time. Things like allocating memory and accessing the harddrive are done only under kernel supervision, so these come under system time( here, 0.06s). You might have heard about <code>malloc</code> or <code>fwrite/fread</code> in your C programming class, these are executed under kernel supervision and come under sys time.</p>
+<p>So you may wonder that, the system time and user time does not add up to real time. The rest is the response time of the securit server. Hence, you can see that in this case, waiting for the response from the server takes up major time.</p>
+<h3 id="understanding-time-terminology-better">Understanding time terminology better</h3>
+<p>We know that there are many programming languages. One of the key difference is that they differ in speed thus taking more user time.<br>
+Imagine you have written a game in C and python. The user time to run the game in python will be greater than C in most case. Hence, for such cases, C is more efficient than python. Here, user time might include the interface, processing the information from keyboard, etc. <code>And this will tell you optimize the user/sys time then working on network time( which isn't of much use in this case).</code><br>
+Now take the example of a server like google drive. Here the response time from the server, download time and upload time matters more than user/sys time.<br>
+<code>Thus you can know which part of your code you should optimize( the network/response time or the user/sys time.</code></p>
+<h2 id="tac">Tac</h2>
+<p>This function is of almost no use to you at this particular moment, but you need to know that such function exists as it will help you in the future.<br>
+Run the command</p>
+<pre class=" language-bash"><code class="prism  language-bash">l
+</code></pre>
+<p>Now, run the command</p>
+<pre class=" language-bash"><code class="prism  language-bash">l <span class="token operator">|</span> tac
+</code></pre>
+<p>the pipe <code>|</code> will pass the output of LHS to RHS  so the output of <code>l</code> will be the input of <code>tac</code>.<br>
+Now you can see that the output of <code>l</code> is printed in the reverse order. And this is what <code>tac</code> does. <code>tac</code> reversers what ever is given to it( usually used for files).</p>
+<h3 id="credits-securit-core-">Credits: secuRIT Core :)</h3>
+<p><a href="https://github.com/ChrompyCoder/secuRIT-event-documentations./blob/main/Symlinks_alias_time_tac.html">Edit this page</a></p>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>secuRIT</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="event-prerequisites">Event prerequisites</h1>
+<h3 id="installing-kali-image-file">Installing Kali image file</h3>
+<ul>
+<li>Visit <a href="https://kali.org">Kali</a>.</li>
+<li>Click on <a href="https://www.kali.org/get-kali/">download</a>.</li>
+<li>Click on <a href="https://www.kali.org/get-kali/#kali-installer-images">Installer Images</a>.</li>
+<li>Download the <a href="https://cdimage.kali.org/kali-2023.4/kali-linux-2023.4-installer-amd64.iso">Recommended Installer</a> for the iso image(3.9GB).</li>
+<li>The file will be downloaded on your pc.</li>
+</ul>
+<h3 id="installing-virtual-box">Installing virtual box</h3>
+<ul>
+<li>Visit <a href="https://virtualbox.org">virtual box</a>.</li>
+<li>Click on <a href="https://www.virtualbox.org/wiki/Downloads">Download Virtual Box 7.0</a>.</li>
+<li>Click on <a href="https://download.virtualbox.org/virtualbox/7.0.14/VirtualBox-7.0.14-161095-Win.exe">Windows hosts</a>.</li>
+<li>Install Virtual box using the .exe file downloaded.</li>
+<li>Give the permissions and wait for the setup wizard to open.</li>
+<li>Click on next.</li>
+<li>Keep clicking on ‘yes’.</li>
+<li>Click and Install.<br>
+<code>You have succesfully installed Kali image file and Virtual box software.</code></li>
+</ul>
+<h2 id="installing-using-command-line-interface.">Installing using command line interface.</h2>
+<ul>
+<li>Open powershell in the desired directory by using <code>cd</code> command or using shift right click in the file explorer.</li>
+<li>Run the following command to download Kali image file:</li>
+</ul>
+<pre><code>Invoke-WebRequest -Uri https://cdimage.kali.org/kali-2023.4/kali-linux-2023.4-installer-amd64.iso -OutFile kali.iso
+
+</code></pre>
+<ul>
+<li>Run the following command to download Virtual Box VM:</li>
+</ul>
+<pre><code>Invoke-WebRequest -Uri https://download.virtualbox.org/virtualbox/7.0.0/VirtualBox-7.0.0-153978-Win.exe -OutFile VirtualBox.exe
+
+</code></pre>
+<ul>
+<li>Open the .exe file downloaded and install using the setup wizard.</li>
+</ul>
+    <h1 id="after-installing-prerequisites">After Installing prerequisites</h1>
+<h3 id="enabling-virtualization-technology-for-windows">Enabling Virtualization technology (For Windows)</h3>
+<p>You will need to Restart your pc in between the process so make sure you are viewing this tutorial any device other than your pc.</p>
+<ul>
+<li>Open <code>Settings</code> &gt;&gt;<code>Windows Update</code> &gt;&gt;<code>Advanced Options</code>.</li>
+<li>Click on <code>Recovery</code>.</li>
+<li>Click on <code>Restart now</code> from <code>Advanced Startup</code> option.<br>
+Your system will restart and show a Menu.</li>
+<li>Scroll using arrow keys and press Enter on <code>Troubleshoot</code>.</li>
+<li>Next go to <code>UEFI Firmware Settings</code>&gt;&gt;<code>Restart</code>.<br>
+It might take a while for your pc to restart and show another drop down menu.</li>
+<li>Press F10 for <code>BIOS Setup</code>.</li>
+<li>Go to the <code>Configuration Menu</code> &gt;&gt; <code>Virtualization Technology</code>.</li>
+<li>Press Enter to enable it.</li>
+<li>Go to <code>Exit</code> and select <code>Save Changes and Exit</code>.</li>
+</ul>
+<h3 id="credits-securit-core-">Credits: secuRIT Core :)</h3>
+<p><a href="https://github.com/ChrompyCoder/secuRIT-event-documentations.">Edit this page</a></p>
+</div>
+</body>
+
+</html>

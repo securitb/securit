@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome file</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h2 id="which-buildversionpackage-to-install">Which build/version/package to install?</h2>
+<p>Ever opened a github repo release page and got overwhelmed by the different download options? Which is for you?<br>
+Well we are going to address the above issue.</p>
+<h3 id="which-version-to-download">Which version to download?</h3>
+<ul>
+<li>Nightly build:- Here, you will get updates every night. The updates are released automatically. This is in a stage where development is still going on. These are very unstable and the crash reports are sent back to the developers. Strictly not recommended unless you are working on it.</li>
+<li>Alpha:- This is a early version of the software under development. Though core features are established, there might still be bugs and a polishing is required. Also, alpha releases are actually more unstable than nightly build.</li>
+<li>Beta:- When the internal testing is complete and a polishing is done, beta release is ready for trail but it still contains many known/unknown bugs. Most of the time, this is the first time when the software is available people outside of the organization to use.</li>
+<li>RC( Release Candidate):- These are post-fixed with <code>-rc</code>. RC is the more stable version of beta with minor bugs and is available to test from a user perspective.</li>
+<li>Stable Release:- This is the stable release that everybody is looking for.<br>
+The above types of releases come under <em>software release life cycle</em> (in that order).</li>
+</ul>
+<h3 id="which-package-to-download">Which package to download</h3>
+<p>Linux-x86_64 vs Linux-aarch64:- These are based on <a href="https://search.brave.com/search?q=CPU+architecture&amp;source=desktop">CPU architecture</a>. Where <code>x86_64</code> is based on intel architecture and <code>aarch64</code> is based on arm architecture( which is really popular for mobile phones).<br>
+To know which one is suitable for you, run <code>uname -m</code> command in your wsl.<br>
+In majority of systems it will show <code>x86_64</code>, for them, you can install the <code>linux-x86_64</code> release or <code>linux64</code>( sometimes used instead of <code>linux-x86_64</code>).<br>
+For some systems it will show <code>aarch64</code>.</p>
+<h2 id="brew">brew</h2>
+<p><code>brew</code> is a package manager like <code>apt</code>. Check out what if a package manager under the section “Apt” from <a href="https://securit.club/archives/PrerequisitesForInstallingNeoVIM">here</a>. Check out <a href="https://brew.sh">official brew webpage</a><br>
+What is the difference between <code>brew</code> and <code>apt</code>? You may ask.<br>
+Well, the main difference is that <code>brew</code> has most recent version of any application when compared to <code>apt</code>. So using <code>brew</code> makes much more sense than using <code>apt</code>.</p>
+<h3 id="installation">Installation</h3>
+<p>Run the following commands to install <code>brew</code>.</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> build-essential procps curl <span class="token function">file</span> <span class="token function">git</span>
+
+<span class="token function">sudo</span> /bin/bash -c <span class="token string">"<span class="token variable"><span class="token variable">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="token variable">)</span></span>"</span>
+
+<span class="token function">test</span> -d ~/.linuxbrew <span class="token operator">&amp;&amp;</span> <span class="token function">eval</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span>~/.linuxbrew/bin/brew shellenv<span class="token variable">)</span></span>"</span>
+
+<span class="token function">test</span> -d /home/linuxbrew/.linuxbrew <span class="token operator">&amp;&amp;</span> <span class="token function">eval</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span>/home/linuxbrew/.linuxbrew/bin/brew shellenv<span class="token variable">)</span></span>"</span>
+</code></pre>
+<p>If you don’t have any frameworks on wsl, use</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token keyword">echo</span> <span class="token string">"eval \"\<span class="token variable"><span class="token variable">$(</span><span class="token variable">$(</span>brew --prefix<span class="token variable">)</span></span>/bin/brew shellenv)\""</span> <span class="token operator">&gt;&gt;</span> ~/.bashrc
+</code></pre>
+<p>If you have ohmyzsh! as your framework for wsl, use</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token keyword">echo</span> <span class="token string">"eval \"\<span class="token variable"><span class="token variable">$(</span><span class="token variable">$(</span>brew --prefix<span class="token variable">)</span></span>/bin/brew shellenv)\""</span> <span class="token operator">&gt;&gt;</span> ~/.zshrc
+</code></pre>
+<p>If you have any other framework installed, use its .config address in the place of .zshrc file or contact secuRIT Core on <a href="https://t.me/securitb">telegram</a>.</p>
+<h3 id="credits-securit-core-">Credits: secuRIT Core :)</h3>
+<p><a href="https://github.com/ChrompyCoder/secuRIT-event-documentations./blob/main/Installation_guide.html">Edit this page</a></p>
+</div>
+</body>
+
+</html>

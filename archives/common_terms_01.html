@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome file</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="common-terms-01">Common terms 01</h1>
+<p>Using windows? Then you need to install <a href="https://securit.club/archives/e1#wsl-windows-subsystem-for-linux">wsl</a>.</p>
+<h2 id="directories">Directories</h2>
+<p>You have folders in your pc right? In programming we call it directories.</p>
+<h4 id="list">list</h4>
+<p>When you open wsl, it opens in a default directory. Now to know the contents of that directory, use the following command</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">ls</span>
+</code></pre>
+<p>ls, list command, lists all the files and directory in your current directory.</p>
+<h4 id="change-directory">change directory</h4>
+<p>To go into another directory you can use the <code>cd</code> command.</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">cd</span> <span class="token operator">&lt;</span>directory_address<span class="token operator">&gt;</span>
+</code></pre>
+<p>For example, to go your desktop, you can use the following command</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">cd</span> /mnt/c/users/<span class="token operator">&lt;</span>your_username<span class="token operator">&gt;</span>/desktop
+</code></pre>
+<ul>
+<li><code>/</code>:- This is called root directory. That is, the parent directory. All files and directory come under this, that is why you use this in front of all the address.</li>
+<li><code>mnt</code>:- <code>mnt</code> stands for <em>mount</em> point. It contains all the files and directories of different OS present in the pc. This is used to access the files in windows.</li>
+</ul>
+<h4 id="creating-and-deleting-directories">Creating and deleting directories</h4>
+<p>To create a new directory use the following command</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">mkdir</span> <span class="token operator">&lt;</span>new_dir_name<span class="token operator">&gt;</span>
+</code></pre>
+<p><code>Note: To create directory in some other location, you can give the full address. This is applicable to most of the commands, that is, you can use the commands to access files/directories from other directories by giving the full path</code><br>
+So, to create a directory on your desktop while you are in some other directory, you can use</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">mkdir</span> /mnt/c/users/<span class="token operator">&lt;</span>user_name<span class="token operator">&gt;</span>/desktop/<span class="token operator">&lt;</span>new_directory_name<span class="token operator">&gt;</span>
+</code></pre>
+<p>To delete a empty directory, use (deletes permanently!)</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">rmdir</span> <span class="token operator">&lt;</span>dir_name<span class="token operator">&gt;</span>
+</code></pre>
+<p>To delete a directory which is not empty you can use,</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">rm</span> -r <span class="token operator">&lt;</span>dir_name<span class="token operator">&gt;</span>
+</code></pre>
+<p><code>NOTE:- THE ABOVE COMMAND IS EXTREMELY DANGEROUS AND REMOVES THE FILES WITHOUT WARNING. DONOT USE UNLESS NECCESSARY. FOR EXAMPLE, IF YOU ENTER "rm -r / " ALL THE FILES IN THE ROOT DIRECTORY WILL GET PERMENANTLY DELETED, WHICH TECHNICALLY IS ALL OF YOUR DATA.</code></p>
+<h4 id="section">./ …/</h4>
+<p>To change the directory, entering the full path is very inconvenient. So you can use</p>
+<ul>
+<li><code>./</code>:- It refers to the current directory.</li>
+<li><code>../</code>:- It refers to the previous directory.<br>
+For example, if you are in a desktop directory and you need to enter another directory which is in desktop, you can use</li>
+</ul>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">cd</span> ./<span class="token operator">&lt;</span>dir_name<span class="token operator">&gt;</span>
+</code></pre>
+<p>If you are in desktop directory, <code>/mnt/c/users/&lt;user_name&gt;/desktop</code> and you want to access another user, you can use</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">cd</span> <span class="token punctuation">..</span>/<span class="token punctuation">..</span>/<span class="token operator">&lt;</span>another_user_name<span class="token operator">&gt;</span>/desktop
+</code></pre>
+<p>The above command will first go to the <code>&lt;user_name&gt;</code> directory &gt;&gt; <code>users</code> directory, then it will look for any user in your pc named <code>&lt;another user&gt;</code> and enter the directory &gt;&gt; <code>desktop</code> (of the other user). Thus you can use the <code>../</code> in chains to go to previous directories.</p>
+<h2 id="files">Files</h2>
+<h4 id="deleting-files">deleting files</h4>
+<p>(deletes permanently!) use the following command,</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">rm</span> <span class="token operator">&lt;</span>file_address<span class="token operator">&gt;</span>
+</code></pre>
+<p>If the file is in your current directory, you don’t need to mention the complete address and only file name is enough, <code>rm &lt;file_name&gt;</code>.</p>
+<h2 id="history">History</h2>
+<h4 id="accessing-history">accessing history</h4>
+<p>You can use the command</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">history</span> 
+</code></pre>
+<p>to view the list of commands you have used till now.</p>
+<h4 id="delete-history">delete history</h4>
+<p>To delete your history you can use`</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">history</span> -c <span class="token operator">&amp;&amp;</span> <span class="token function">history</span> -w
+</code></pre>
+<h3 id="credits-securit-core-">Credits: secuRIT Core :)</h3>
+<p><a href="https://github.com/ChrompyCoder/secuRIT-event-documentations./blob/main/common_terms_01.html">Edit this page</a></p>
+</div>
+</body>
+
+</html>

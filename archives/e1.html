@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>secuRIT</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="introduction">Introduction</h1>
+<p>We are going give you a introduction on how to setup your own hacking lab. Sounds crazy! right? Well it is.</p>
+<h3 id="understanding-the-basics">Understanding the basics</h3>
+<h4 id="what-is-virtualization">What is Virtualization?</h4>
+<p>Virtualization is basically creating your own virtual based real life computer resource like servers, storage and networks.</p>
+<h4 id="what-are-virtual-machine-vm">What are Virtual Machine (VM)?</h4>
+<p>These are machines created in your own computer which have same properties as your main machine but also have some additional properties and advantages too.<br>
+Each VM runs its own operating system so you can basically have linux (VM) running on your windows pc (Main machine). It behaves as a separate machine even though it is working in your main machine.</p>
+<h4 id="what-are-hypervisors-aka-virtualization-software">What are Hypervisors aka Virtualization software?</h4>
+<p>VMs access hardware through Hypervisor.<br>
+Hypervisor creates virtual physical resources from borrowing physical resources from your own pc (main machine) and allocates it to the VM. So the VMs can use only the allocated physical resources( like RAM, CPU, Storage).</p>
+<h3 id="installing-virtualization-software">Installing Virtualization software</h3>
+<p>There are many Virtualization software but for todays event we would be using Oracle Virtual Box.<br>
+The installation is shown in the prerequisite of the event.</p>
+<h3 id="image-of-a-os">Image of a OS</h3>
+<h4 id="what-is-an-image-of-a-os">What is an image of a OS?</h4>
+<p>An image is a preconfigured operating system that you can use to create VMs. You don’t have to do any configuration as everything is ready for you. To understand this we can use the analogy of cup noodles, as everything is ready for you and you just have to pour hot water for it to get ready. In the same way you just need to install it and add it to your Hypervisor without any additional setup/Configuration.</p>
+<h4 id="downloading-an-image">Downloading an image</h4>
+<p>An image of an operating system can be downloaded using there official website or directly from command line.<br>
+For steps on downloading an image refer to the prerequisite of the event.<br>
+Any OS image is fine but for todays event we would be using Kali Linux image file.</p>
+<h3 id="importing-vm-into-virtualization-platform">Importing VM into virtualization platform</h3>
+<h4 id="configuring-virtual-box">Configuring Virtual box</h4>
+<ul>
+<li>Open Virtual Box Software.</li>
+<li>Click on <code>New</code>.</li>
+<li>Fill accordingly -<br>
+<code>Name</code>: Name your operating system as per your choice.<br>
+<code>Type</code>: Select <code>Linux</code> (as Kali is a Linux OS).<br>
+<code>Version</code>: Select <code>Dabian (64-bit)</code> from the drop down menu.<br>
+After the above steps,<br>
+<code>ISO-Image</code>: Browse and select the Kali image downloaded</li>
+<li>Click on <code>Next</code>.</li>
+<li>Change the default username and password.<br>
+<em>Note- This is a very important step. You need to change the default username and password because if you don’t, then the VM created will not have all the feature/permissions you normally need.</em></li>
+<li>If you want additional GUI features you can check the <code>Guest Additions</code> box.</li>
+<li>Click on <code>Next</code>.</li>
+<li>For <code>Base Memory</code> 2048MB is fine and <code>Processors</code> you can set in between 2-4, in todays setup we use 3. Click on <code>Next</code>.</li>
+<li>By default <code>Create a Virtual Hard Disk Now</code> is selected. Choose the disk size between 20GB-30GB for optimal functioning of the VM. Click on <code>Next</code>.</li>
+<li>You will get a summary of the configuration. You can recheck/read/scroll and explore. Click on <code>Finish</code> to finish the configuration.</li>
+<li>(This step is unnecessary as this is already setup by default) Now got to <code>Settings</code> &gt;&gt; <code>Storage</code> &gt;&gt; Click on the name of your VM &gt;&gt; In <code>Optical Drive</code> drop down menu select <code>IDE Secondary Device 0</code>.</li>
+<li>Click on <code>Start</code>.</li>
+<li>Once the VM is powered up, it will show a drop down menu asking the type of install you would like(for Kali Linux VM). Select <code>Graphical install</code>.</li>
+<li>Select the language, location and the type of keyboard and click on <code>continue</code>.</li>
+<li>The installation will take place.<br>
+<code>Congrats, you have successfully instlled a VM on your main machine.</code></li>
+</ul>
+<h3 id="the-networking-settings">The networking settings</h3>
+<p>While you are configuring your hypervisor, you might come across networking settings.</p>
+<h4 id="tchwhat-is-networking-settings">(Tch!)What is Networking settings?</h4>
+<p>Network settings define the connectivity between VMs (interconnectivity of VMs).</p>
+<pre><code>You can access this in Virtual box by clicking on `Settings`&gt;&gt; `Network`&gt;&gt; Required `Adapter X`&gt;&gt; Select required networking options through the drop menu from `Attached  to`&gt;&gt; Click on `ok`.
+</code></pre>
+<h4 id="understanding-the-two-main-networking-options-available-on-virtual-box">Understanding the two main networking options available on Virtual Box</h4>
+<ol>
+<li>NAT (Network Address Translation) mode: It creates a isolated network for your VMs. So any other device like other pcs, phone, tablets cannot have the same IP address as your VMs. For example, consider a router with the IP address <code>10.10.10.190</code> and a main machine which has VMs with access to the internet through the router. Now if the hypervisor is in NAT mode, consider the VMs access the internet through the hypervisor that is the hypervisor acts like a router with a IP address <em>other</em> than <code>10.10.10.190</code> and each VM with separate private IP address. Thus, the IP address used by the VMs is completely different from the main machine and any other device.</li>
+<li>Bridged adapter mode: In this mode, a VM appears on the same network as the host machine, as if it were a separate physical device connected to the local network. So whatever devices which are connected to your switch or router can access the VMs because they now have a real IP address which is connected to the router directly. This network option helps in learning  and understanding about the commands and stuff as it provides a vulnerable machine (with preexisting exploits) to practice with.</li>
+</ol>
+<p>For beginners, it is suggested to use NAT mode as it creates a private network for you work with and even if you mess up somewhere, it only affects your VM and not any other device connected to the router.</p>
+<h3 id="wsl-windows-subsystem-for-linux">WSL (Windows Subsystem for Linux)</h3>
+<h4 id="installing-wsl">Installing wsl</h4>
+<p>The following steps will tell you how to install wsl version 2 (latest version).</p>
+<h5 id="using-ms-store">Using MS Store</h5>
+<ul>
+<li>Open Microsoft Store. Search for <code>wsl</code>.</li>
+<li>You will get a option with pinguin as its symbol. <code>Install</code> it.</li>
+</ul>
+<h5 id="using-windows-powershellcommand-prompt">Using Windows PowerShell/Command Prompt</h5>
+<p>For windows 10 and older:</p>
+<ul>
+<li>Open Command prompt or Windows PowerShell.</li>
+<li>Type or copy paste the command-</li>
+</ul>
+<pre><code>wsl --install
+</code></pre>
+<p>For windows version below 10, refer <a href="https://learn.microsoft.com/en-us/windows/wsl/install-manual">here</a>.</p>
+<h4 id="installing-ubuntu">Installing Ubuntu</h4>
+<ul>
+<li>Use the command</li>
+</ul>
+<pre><code>wsl --install
+</code></pre>
+<p>again to install the default Linux distribution (Ubuntu) after wsl is installed.</p>
+<p>or</p>
+<ul>
+<li>Directly install WSL and Ubuntu from Microsoft Store.</li>
+</ul>
+<h4 id="basic-commands-related-to-wsl2-which-can-be-used-in-powershell">Basic commands related to wsl2 (which can be used in PowerShell)</h4>
+<pre><code>wsl
+</code></pre>
+<p>Runs the default distro (by default its ubuntu).</p>
+<pre><code>wsl --set-default &lt;distribution_name&gt;
+</code></pre>
+<p>If you have more than one linux distribution on your pc, you can set your desired distro as default using the above command.</p>
+<pre><code>wsl  --list --online
+</code></pre>
+<p>used to available linux distribution which can be installed for wsl.</p>
+<pre><code>wsl --install -d &lt;Distribution_name&gt;
+</code></pre>
+<p>installs the mentioned linux  distribution for example</p>
+<pre><code>wsl --install -d Debian 
+</code></pre>
+<p>will install debian distribution.</p>
+<pre><code>wsl --list --verbose
+</code></pre>
+<p>lists the <code>name</code> of all the distributions available and their active <code>status</code> (Running/Stopped) along with the <code>version</code> of wsl on which they are installed.</p>
+<pre><code>wsl -t &lt;Distribution name&gt;
+</code></pre>
+<p>will terminate the distro session.<br>
+These are the basic commands to get you started. To know more you can refer the <a href="https://learn.microsoft.com/en-us/windows/wsl/install">official documentation</a> from microsoft website.</p>
+<p>Note: To terminate session in wsl you can use <code>exit</code> command.</p>
+<p>PS: In cybersecurity, for learning, you need a vulnerable machine which can be exploited and that is just not possible with wsl as it is a part of your system. So VMs are a much much better way to get into cybersecurity rather than wsl as you can explore/experiment/discard without risking your main machine. So while wsl acts like a subsystem of your main machine but VMs act like different machines virtually hosted on your machine.</p>
+<h3 id="in-future-sessions">In future sessions</h3>
+<ul>
+<li>We will learning about the core concepts which are pre-requisites and essential for getting started in cybersecurity (Like learning about networking, OS and much more). As todays session was a beginner friendly session, we will be getting into more complex stuff steadily assuming that you have been following the Previous sessions :)</li>
+<li>Explore various tools related to cyber security and ethical hacking.</li>
+<li>Show a proper use of the tools other using it normally.</li>
+<li>Explain ethical code and why is it important.</li>
+<li>Explain how hackers abuse pre-existing protocol and the counter measures to it.</li>
+</ul>
+<h3 id="doubts">Doubts</h3>
+<p>In case of any doubts/problem occurred during the setup at any step or after the setup any time, you are free to contact secuRIT on our <a href="https://t.me/securitb/1">telegram channel</a>.<br>
+In case of any mistakes in any part of the above session please contact any of the admins of our <a href="https://t.me/securitb/1">telegram channel</a>.</p>
+<p><code>(Not) The End.</code></p>
+<h3 id="credits-securit-core-">Credits: secuRIT Core :)</h3>
+<p><a href="https://github.com/ChrompyCoder/secuRIT-event-documentations.">Edit this page</a></p>
+</div>
+</body>
+
+</html>

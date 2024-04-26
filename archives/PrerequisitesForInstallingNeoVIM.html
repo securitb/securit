@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome file</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="pre-requisites-for-installing-neovim">Pre-requisites for installing NeoVIM</h1>
+<p>Check out <a href="https://securit.club/archives/e1">event 1 documentation</a>, for installation guide for WSL.<br>
+You can use <code>ctrl+c</code> and <code>ctrl+v</code> to copy and paste anything in wsl.</p>
+<h2 id="apt">APT</h2>
+<p>You might have used many commands with apt even if you are a newbie. Like</p>
+<pre><code>sudo apt update
+sudo apt install curl
+</code></pre>
+<p>The formal definition is that <code>apt</code> is a package manager. So in simple words conventionally, if you want to install any software for example <code>neovim</code> than you have to build the software using the written code yourself. This sometimes takes a lot of time so in order to tackle that problem geeks introduced <code>apt</code> so <code>apt</code> does all the above work for you and you just have to wait for it to install which is much easier and time efficient.<br>
+You can go ahead and type in <code>sudo apt update</code> and hit enter. Now the terminal will check for updates in <code>apt</code> and shows them to us. If you want to install those updates you can enter <code>sudo apt upgrade</code>.<br>
+So you have learnt what <code>apt</code> is and how can we use it.</p>
+<h2 id="path">Path</h2>
+<p>Enter the following command in wsl</p>
+<pre><code>echo $PATH
+</code></pre>
+<p>This will give you a bunch of addresses.<br>
+Now enter the following command</p>
+<pre><code>date
+</code></pre>
+<p>this will display the date and the time. You can see that you haven’t entered where to search for <code>date</code> when you enter the command. Well the terminal looks for <code>date</code> function inside a set of predefined addresses which are displayed why you type <code>echo $PATH</code>. So when you type in <code>date</code> and hit enter, the terminal will search for <code>date</code> function in the all the address from <code>PATH</code> and run it.<br>
+You can verify this by entering</p>
+<pre><code>which date
+</code></pre>
+<p>this will give you the address from where <code>date</code> is run from. You can verify that the address is present in the path( from <code>echo $PATH</code>).<br>
+<code>Note: You can add addresses to the PATH.</code></p>
+<h2 id="vi-vim-and-nvim">Vi, VIM And NVIM</h2>
+<p>Vi, VIM and NVIM are text editor just like VSCode, Sublime Text, etc. but it is run on command-line. So you can edit codes in command line itself. You might have used Vi or VIM in your lab.<br>
+Vi is the oldest of them all.<br>
+VIM( Short for Vi IMproved) was introduced later with more exciting features.<br>
+NVIM( Short for NeoVIM) was created after VIM.</p>
+<h3 id="advantages-">Advantages-</h3>
+<ul>
+<li>You can code at the speed of your thought.</li>
+<li>Very efficient.</li>
+<li>Helps you write long codes( Other text editors fail after few thousand lines).</li>
+<li>Useful in the long run.</li>
+<li>Plugins - There are many useful plugins.<br>
+Keep in mind- These editors will slow you down at first, but once you adjust, your speed will be unstoppable.<br>
+Though Vi is discontinued now, VIM can be found in all the Linux command line interfaces( Ubuntu, Debian and others).<br>
+You can learn more about VIM by typing the command</li>
+</ul>
+<pre><code>vimtutor
+</code></pre>
+<p>or from <a href="https://missing.csail.mit.edu/2020/editors/">this</a> video from MIT( recommended).<br>
+<code>Note: When you type "vi &lt;filename with extention&gt;", the command line by default, opens the file in VIM itself and not vi.</code></p>
+<h2 id="extraction-software">Extraction software</h2>
+<p>We will learn about extracting zipped files in this section.<br>
+There are many ways to convert a directory to zipped. We will be discussing about TAR( Tape ARchives). Tar is a built in extracter and converter for wsl or any UNIX terminal, sometimes also referred as tarball.<br>
+In tar you can combine different files into a single zipped file. There is no compression involved here. Its like taping archives( files in this case) together and hence the name.<br>
+For example, download the following <a href="https://github.com/ChrompyCoder/secuRIT-event-documentations./releases/download/v1.0.0/sample.tar">sample.tar</a> file created by secuRIT. This .tar file contains previous events/documentation details.<br>
+To extract the file, go to the directory where the file is downloaded and run the following command</p>
+<pre><code>tar xf sample.tar
+</code></pre>
+<p>(xf is the argument which tells extract the file)<br>
+This will extract the files into the current directory.<br>
+You have successfully extracted a zipped .tar file using wsl.<br>
+Now since you know VIM, open the <code>Event 1.html</code> from the <code>sample.tar</code> in VIM using <code>vim Event1.html</code>. Now you can try out the commands and make changes in the file. VIM and NVIM can open almost any type of file( .txt, .cpp, .c, .html, .css and much more).<br>
+<code>Note: tar is usually used with compression to make compressed tar files. They usually have the extention .gz, .bz2, .xz. Installation releases are usually spread using .tar.gz files in the open source community.</code></p>
+<h3 id="credits-securit-core-">Credits: secuRIT Core :)</h3>
+<p><a href="https://github.com/ChrompyCoder/secuRIT-event-documentations.">Edit this page</a></p>
+</div>
+</body>
+
+</html>

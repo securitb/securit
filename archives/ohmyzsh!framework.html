@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome file</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="framework-for-wsl-oh-my-zsh">Framework for WSL( Oh my zsh!)</h1>
+<p>Check out <a href="https://securit.club/archives/e1">event 1 documentation</a>, for installation guide for WSL.</p>
+<h2 id="oh-my-zsh">Oh My Zsh!</h2>
+<p>NOTE:- One of the most popular alternative to <code>oh my zsh!</code> is <a href="https://fishshell.com/">fishshell</a>, but the installation for  <a href="https://fishshell.com/">fishshell</a> is a bit complicated.</p>
+<p>Why don’t you open your WSL. Well it looks like a plain old terminal right? Now we will help you customize it.<br>
+<code>zsh</code> short for zshell is a command line interpreter used by Linux or in this case your WSL.</p>
+<h3 id="what-is-oh-my-zsh">What is Oh My Zsh!</h3>
+<p>Oh My Zsh helps you customize your zsh configuration/layout.<br>
+How? (you may ask).<br>
+By providing you with solutions like:</p>
+<ul>
+<li>Themes- Helps your WSL terminal interface look good and interesting.</li>
+<li>Plugins- Plugins help you improve your efficiency and performance.(How? We will answer that soon).</li>
+<li>Functions- Build your own custom functions for your shell.<br>
+So you can customize the shell as per your wish. So basically, it acts like a framework.</li>
+</ul>
+<h3 id="advantages-">Advantages-</h3>
+<ul>
+<li>For your themes- You can customize the look so it gives you a homely feeling. There are also predefined themes which you can use.</li>
+<li>Plugins- The community actively introduces new updates to the plugins and it has some really helpful plugins.</li>
+<li>Opensource- <code>oh my zsh!</code> is completely open source so you can trust it and access their source code on their <a href="https://github.com/ohmyzsh/ohmyzsh">Github page</a>.</li>
+<li>Active community- <code>oh my zsh!</code> has a active community which introduce new updates and plugins.</li>
+</ul>
+<h3 id="installing-oh-my-zsh">Installing “oh my zsh!”</h3>
+<p>Type the following in your terminal and hit enter to install <code>oh my zsh!</code>:</p>
+<pre><code>sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+</code></pre>
+<p>(You can check you <code>oh my zsh!</code> <a href="https://github.com/ohmyzsh/ohmyzsh">Github</a> to know more about themes.)</p>
+<h3 id="zshrc">.zshrc</h3>
+<p>The configuration for <code>oh my zsh!</code> can be edited by editing the .zshrc by opening it any text editors like notepad, VSCode, sublime text, VIM etc.<br>
+The address of the file is <code>~/.zshrc</code>. That is, it is present in <code>~</code> or <code>/home/&lt;your_username&gt;</code> directory.<br>
+You must keep in mind that when ever <code>oh my zsh!</code> starts it always runs <code>.zshrc</code> file.</p>
+<h3 id="adding-default-start-up-directory">Adding default start-up directory</h3>
+<p>Every-time you start your wsl you might observe that it opens in a specific directory always. In order to edit that you can tell <code>oh my zsh!</code> to open wsl every-time it in any other directory.<br>
+Since the .zshrc file is read every-time <code>oh my zsh!</code> starts, you can add the command in that file to change the directory so that it automatically opens wsl in that directory.<br>
+To do that add the following command</p>
+<pre><code>cd path/to/the/directory
+</code></pre>
+<p>to the .zshrc file( in any line)(recommended method). Or you can run the following command</p>
+<pre><code>echo "cd path/to/the/directory" &gt;&gt; ~/.zshrc
+</code></pre>
+<h3 id="adding-a-theme">Adding a Theme</h3>
+<p>To add your theme, check out their <a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes">Github page</a>, select a theme and add it in your .zshrc file(at around line 11). Remove the default theme and add yours. It should look something like</p>
+<pre><code>ZSH_THEME=( "&lt;theme_name_with_qoutes&gt;" )
+</code></pre>
+<h3 id="adding-plugins">Adding plugins</h3>
+<p>You can check out the pre-installed plugins on the <a href="https://github.com/ohmyzsh/ohmyzsh/wiki/plugins">Github page</a> of <code>oh my zsh!</code>. You can activate those by editing the .zshrc file and following the instructions from line 69 of the .zshrc file.<br>
+(You can add other plugins also but the instructions for those are not mentioned in this article.)<br>
+The line should look like</p>
+<pre><code>plugins=(git macos) //This is for the "git" and "macos" plugins. 
+</code></pre>
+<p>You can add as many plugins as you want. But remember, plugins make you efficient but too many plugins can slow down the terminal.</p>
+<h3 id="disabling-auto-updates">Disabling auto updates</h3>
+<p>You can disable auto updates for <code>oh my zsh!</code> by uncommenting the 27th line on the .zshrc file.<br>
+It should like</p>
+<pre><code>zstyle ':omz:update' mode disabled
+</code></pre>
+<h3 id="to-exit-oh-my-zsh">To exit <code>oh my zsh!</code></h3>
+<p>You can exit <code>oh my zsh!</code> and go back to the normal bash terminal window using the command <code>bash</code> and to enter <code>oh my zsh!</code> again you can enter <code>exit</code> in bash.</p>
+<h3 id="credits-securit-core-">Credits: secuRIT Core :)</h3>
+<p><a href="https://github.com/ChrompyCoder/secuRIT-event-documentations.">Edit this page</a></p>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome file</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="vim-nvim-and-more">Vim, NVIM and More</h1>
+<h2 id="what-you-will-be-learning">What you will be learning</h2>
+<ul>
+<li>Why do you need to use VIM/NVIM over VScode standard IDE, pycharm, sublime text or any other text editor.</li>
+<li>How to install nvim and the problems faced while doing it with “apt”.</li>
+</ul>
+<p>Check out <a href="https://securit.club/archives/e1">event 1 documentation</a>, for installation guide for WSL.<br>
+You can use <code>ctrl+c</code> and <code>ctrl+v</code> to copy and paste anything in wsl.</p>
+<p><code>NeoVIM has many features which will help you work faster but also make you lazy so make sure you have spent significant amount of time with VIM before starting out with neovim</code>.</p>
+<h2 id="nvim">NVIM</h2>
+<p>NeoVIM is basically VIM but modified, so all the VIM commands are valid in NeoVIM. It supports a variety of plugins and one of the main advantages of using it is that the developers of NeoVIM are actively working on it and the plugins for NeoVIM are more powerful then VIM.</p>
+<h3 id="how-not-to-install-nvim">How NOT to install NVIM</h3>
+<p>If you are familiar with command line than you will be tempted to type <code>sudo apt install neovim</code>.<br>
+But the thing is <code>apt</code> has its own set of advantages and disadvantages. As mentioned in the pre-requisites <code>apt</code> is a package managing software so you can directly install the required software you want. But the disadvantage of it is that the <code>apt</code> command should be updated by someone every time a new update for any software comes up which is really hard to keep up. So <code>apt</code> can install a old version of the software you want.<br>
+You can check for the the software you will be installing using <code>apt-cache policy &lt;package_nm&gt;</code> or in this context:</p>
+<pre><code>apt-cache policy neovim
+</code></pre>
+<p>You can type in the above command in your wsl to check which version of neovim will <code>apt</code> be installing if you had typed <code>sudo apt install neovim</code>.<br>
+Compare it with the latest stable release from <a href="https://github.com/neovim/neovim/releases">the official neovim github page</a>. They both should differ.</p>
+<h3 id="how-to-install-nvim">How to install NVIM</h3>
+<p>Since we can’t use <code>apt</code>, we will be extracting the compiled source code downloaded from the <a href="https://github.com/neovim/neovim/releases">NeoVIM github page</a>.</p>
+<ul>
+<li>Enter the following commands</li>
+</ul>
+<pre><code>mkdir ~/.local
+mkdir ~/.local/bin
+</code></pre>
+<p>(This will create a directory called <code>bin</code> within <code>.local</code>)</p>
+<ul>
+<li>Download the latest .tar.gz stable release from <a href="https://github.com/neovim/neovim/releases">NeoVIM github page</a>. We need the release for linux (x64) since you are running a linux distro on your wsl. Since you have learnt about <code>tar</code> extraction command from pre-requisites, we will be downloading tarball file.<br>
+OR click <a href="https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz">here</a>to download NVIM v0.9.5.<br>
+Download the .tar.gz file in the ~/.local/bin directory or use the command <code>mv path/to/.tar.gz/file ~/.local/bin</code></li>
+<li>Run the following commands</li>
+</ul>
+<pre><code>tar xzvf nvim-linux64.tar.gz
+rm -fr nvim-linux64.tar.gz
+</code></pre>
+<p>(The above commands will extract the zipped file and delete the it)</p>
+<ul>
+<li>Typing <code>neovim</code> every time to run it might be tiring. So you can link it with <code>nvim</code> such that every time you type <code>nvim</code> it executes <code>neovim</code>(recommended). This is called symbolic link. To do this type</li>
+</ul>
+<pre><code>ln -s ~/.local/bin/nvim-linux64/bin/nvim ~/.local/bin/nvim
+</code></pre>
+<ul>
+<li>Now you would want <code>nvim</code> to work no matter in what directory you are right? (You can try running <code>nvim --version</code> and it will not run) Well in order to do that, the directory in which <code>nvim</code> is stored must in the $PATH.<br>
+Note: The following commands are for users of <code>oh my zsh!</code>. If you are not using <code>oh my zsh!</code> then you need to use different commands. If you don’t know what configuration file you need to edit you can learn about your framework or reach out secuRIT Core on <a href="https://t.me/securitb">telegram</a>.<br>
+Use the following command to add the address to $PATH</li>
+</ul>
+<pre><code>echo 'export PATH=$HOME/.local/bin:$PATH' &gt;&gt; ~/.zshrc
+source ~/.zshrc
+</code></pre>
+<p>(The first line will add the address and second line will reload the <code>.zshrc</code> so that the changes start affecting.)<br>
+Now if you enter <code>nvim --version</code> it will run successfully and display you the version.</p>
+<h3 id="credits-securit-core-">Credits: secuRIT Core :)</h3>
+<p><a href="https://github.com/ChrompyCoder/secuRIT-event-documentations.">Edit this page</a></p>
+</div>
+</body>
+
+</html>
