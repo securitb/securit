@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Charmer</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Courier New', monospace;
+            overflow: hidden;
+            background-color: #0f0f23;
+        }
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        #gameContainer {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #scoreContainer {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 255, 0, 0.2);
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
+        #score {
+            font-size: 28px;
+            color: #00ff00;
+            text-shadow: 0 0 5px #00ff00;
+        }
+        #gameCanvas {
+            border: 2px solid #00ff00;
+            box-shadow: 0 0 20px #00ff00;
+        }
+        #flagPopup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(15, 15, 35, 0.9);
+            border: 2px solid #00ff00;
+            padding: 20px;
+            font-size: 24px;
+            text-align: center;
+            z-index: 100;
+            box-shadow: 0 0 20px #00ff00;   
+            color: #00ff00;
+        }
+        #instructions {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            background: rgba(0, 255, 0, 0.3); /* Slightly more visible background */
+            color: #00ff00;
+            padding: 30px; /* Increased padding */
+            border-radius: 8px; /* Slightly larger border radius */
+            font-size: 20px; /* Increased font size */
+            max-width: 400px; /* Increased maximum width */
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.6); /* Enhanced box shadow for better visibility */
+        }
+        #title {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 36px;
+            color: #00ff00;
+            text-shadow: 0 0 10px #00ff00;
+        }
+        .glow {
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00; }
+            to { text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00; }
+        }
+    </style>
+</head>
+<body>
+    <canvas class="matrix-bg" id="matrixCanvas"></canvas>
+    <div id="gameContainer">
+        <h1 id="title" class="glow">Snake Charmer</h1>
+        <div id="scoreContainer">
+            <div id="score">Score: 0</div>
+        </div>
+        <div id="instructions">
+            <p>1) Objective: Get 30 points to unlock the flag.</p>
+            <p>2) Overlapping the snake or hitting walls resets the game.</p>
+            <p>3) Use arrow keys to control the snake.</p>
+            <p>4) Press any arrow key to start!</p>
+        </div>
+        <canvas id="gameCanvas" width="600" height="600"></canvas>
+    </div>
+    <div id="flagPopup">
+        <p>Congratulations! You've scored 30 points.</p>
+        <p>Here's your flag:</p>
+        <p class="glow" id="decodedFlag"></p>
+    </div>
+    <script>
+        // Matrix background
+        const matrixCanvas = document.getElementById('matrixCanvas');
+        const matrixCtx = matrixCanvas.getContext('2d');
+
+        matrixCanvas.width = window.innerWidth;
+        matrixCanvas.height = window.innerHeight;
+
+        const matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%";
+        const matrixChars = matrix.split("");
+
+        const fontSize = 10;
+        const columns = matrixCanvas.width / fontSize;
+
+        const drops = [];
+        for (let x = 0; x < columns; x++) {
+            drops[x] = 1;
+        }
+
+        function drawMatrix() {
+            matrixCtx.fillStyle = "rgba(15, 15, 35, 0.04)";
+            matrixCtx.fillRect(0, 0, matrixCanvas.width, matrixCanvas.height);
+
+            matrixCtx.fillStyle = "#0f0";
+            matrixCtx.font = fontSize + "px monospace";
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = matrixChars[Math.floor(Math.random() * matrixChars.length)];
+                matrixCtx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > matrixCanvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        setInterval(drawMatrix, 35);
+
+        // Snake game
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const scoreElement = document.getElementById('score');
+        const flagPopup = document.getElementById('flagPopup');
+        const decodedFlagElement = document.getElementById('decodedFlag');
+
+        const GRID_SIZE = 30;
+        const SNAKE_SIZE = GRID_SIZE - 4;
+        const FOOD_SIZE = GRID_SIZE - 4;
+
+        let snake = [{ x: 10, y: 10 }];
+        let direction = { x: 0, y: 0 };
+        let food;
+        let score = 0;
+        let gameStarted = false;
+
+        function getInitialFood() {
+            return {
+                x: Math.floor(Math.random() * (canvas.width / GRID_SIZE)),
+                y: 0
+            };
+        }
+
+        function getRandomFood() {
+            return {
+                x: Math.floor(Math.random() * (canvas.width / GRID_SIZE)),
+                y: Math.floor(Math.random() * (canvas.height / GRID_SIZE))
+            };
+        }
+
+        function init() {
+            food = getInitialFood();
+            gameLoop();
+        }
+
+        function gameLoop() {
+            update();
+            draw();
+            setTimeout(gameLoop, 100);
+        }
+
+        function update() {
+            if (!gameStarted) return;
+
+            const newHead = { x: snake[0].x + direction.x, y: snake[0].y + direction.y };
+
+            if (newHead.x < 0 || newHead.x >= canvas.width / GRID_SIZE ||
+                newHead.y < 0 || newHead.y >= canvas.height / GRID_SIZE ||
+                snake.some(segment => segment.x === newHead.x && segment.y === newHead.y)) {
+                resetGame();
+                return;
+            }
+
+            snake.unshift(newHead);
+
+            if (newHead.x === food.x && newHead.y === food.y) {
+                score++;
+                scoreElement.textContent = `Score: ${score}`;
+                food = getRandomFood();
+                if (score >= 30) {
+                    showFlag();
+                }
+            } else {
+                snake.pop();
+            }
+        }
+
+        function resetGame() {
+            snake = [{ x: 10, y: 10 }];
+            direction = { x: 0, y: 0 };
+            food = getInitialFood();
+            score = 0;
+            scoreElement.textContent = `Score: ${score}`;
+            gameStarted = false;
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw snake
+            ctx.fillStyle = '#00ff00';
+            snake.forEach((segment, index) => {
+                const alpha = 1 - (index / snake.length) * 0.6;
+                ctx.fillStyle = `rgba(0, 255, 0, ${alpha})`;
+                ctx.fillRect(segment.x * GRID_SIZE, segment.y * GRID_SIZE, SNAKE_SIZE, SNAKE_SIZE);
+            });
+
+            // Draw food
+            ctx.beginPath();
+            ctx.arc(food.x * GRID_SIZE + GRID_SIZE / 2, food.y * GRID_SIZE + GRID_SIZE / 2, FOOD_SIZE / 2, 0, 2 * Math.PI);
+            ctx.fillStyle = '#ff0000';
+            ctx.fill();
+
+            // Add glow effect to food
+            ctx.shadowBlur = 10;
+            ctx.shadowColor = '#ff0000';
+            ctx.fill();
+            ctx.shadowBlur = 0;
+        }
+
+        function showFlag() {
+            const encodedFlag = 'c2VjdVJJVHtzbjRrM19jaDRybTNyXzNsaXQzfQ=='; // Base64 encoded flag
+            decodedFlagElement.textContent = atob(encodedFlag);
+            flagPopup.style.display = 'block';
+            setTimeout(() => {
+                flagPopup.style.display = 'none';
+                resetGame();
+            }, 10000);
+        }
+
+        document.addEventListener('keydown', (event) => {
+            if (!gameStarted) {
+                gameStarted = true;
+            }
+
+            switch (event.key) {
+                case 'ArrowUp':
+                    if (direction.y === 0) direction = { x: 0, y: -1 };
+                    break;
+                case 'ArrowDown':
+                    if (direction.y === 0) direction = { x: 0, y: 1 };
+                    break;
+                case 'ArrowLeft':
+                    if (direction.x === 0) direction = { x: -1, y: 0 };
+                    break;
+                case 'ArrowRight':
+                    if (direction.x === 0) direction = { x: 1, y: 0 };
+                    break;
+            }
+        });
+
+        init();
+    </script>
+</body>
+</html>
