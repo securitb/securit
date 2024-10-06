@@ -737,13 +737,13 @@ span.fail:after {
 .social-icon:hover {
     color: var(--color-link-hover); /* You can use your custom hover color variable here */
 }
-
-/* Dropdown styles */
+/* Dropdown container */
 .dropdown {
     display: flex;
     position: relative;
 }
 
+/* Dropdown button */
 .dropbtn {
     background-color: transparent;
     color: #fff;
@@ -753,31 +753,48 @@ span.fail:after {
     padding: 3px 10px;
 }
 
+/* Dropdown content, initially hidden */
 .dropdown-content {
-    display: none;
+    max-height: 0; /* Hidden initially */
+    opacity: 0; /* Initially invisible */
+    overflow: hidden; /*Prevent overflow*/
     position: absolute;
     background-color: #000;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    border-radius: 10px; /* Rounded corners */
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out; /* Smooth transition for height and opacity */
+    /* max-height: 300px; Set a max height for dropdown */
+    overflow-y: auto; /* Scroll vertically if content exceeds */
+    scrollbar-width: none;
 }
-
+/* Hide scrollbar for Webkit browsers (Chrome, Safari) */
+.dropdown-content::-webkit-scrollbar {
+    width: 0; /* Width of the scrollbar */
+    background: transparent; /* Background of the scrollbar */
+}
+/* Dropdown links */
 .dropdown-content a {
     color: #fff;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    border-radius: 10px; /* Optional: make individual links have rounded corners */
 }
 
+/* Hover effect for links */
 .dropdown-content a:hover {
-    background-color: #000000;
+    background-color: #333; /* Darker hover effect */
 }
 
+/* Show the dropdown with smooth transition on hover */
 .dropdown:hover .dropdown-content {
-    display: block;
+    max-height: 500px; /* Adjust based on the content size */
+    opacity: 1; /* Fully visible */
 }
 
 /* Optional: Style the dropdown button when hovering */
 .dropdown:hover .dropbtn {
-    background-color: #ff0000;
+    background-color: transparent;
     color: #000;
 }
