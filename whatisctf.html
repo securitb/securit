@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>What is CTF - secuRIT</title>
+
+    <!-- External Stylesheets -->
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap4-neon-glow.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!-- Hack Font -->
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Styles to Ensure <strong> is Bold -->
+    <style>
+        /* This ensures that all <strong> tags render their text in bold */
+        strong {
+            font-weight: bold !important;
+            font-family: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <div class="mt-20 mb-10 max-w-[90%] mx-auto md:justify-between md:items-center md:flex md:flex-row">
+        <!-- Logo for Desktop -->
+        <div class="hidden md:flex flex-row">
+            <a href="index.html">
+                <img src="./images/securitlogo.png" height="80" width="80" alt="secuRIT Logo" />
+            </a>
+        </div>
+
+        <!-- Hamburger Menu for Mobile -->
+        <div class="md:hidden">
+            <button onclick="toggleBurger()" class="flex-col justify-center">
+                <!-- Hamburger Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    style="fill:#FFFFFF;">
+                    <path
+                        d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z 
+                           M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z 
+                           M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="burger" class="flex-col md:hidden burgerdropdown gap-3 p-4 hidden">
+            <a href="index.html" class="p-3 text-decoration-none text-light bold">Home</a>
+            <a href="about.html" class="p-3 text-decoration-none text-light bold">About</a>
+            <a href="preamble.html" class="p-3 text-decoration-none text-light bold">Preamble</a>
+            <div class="dropdown">
+                <button class="dropbtn p-3 text-decoration-none text-light bold">Archive</button>
+                <div class="dropdown-content">
+                    <a href="archives/pre.html" class="text-decoration-none text-light bold">Prerequisites (for event.01)</a>
+                    <a href="archives/e1.html" class="text-decoration-none text-light bold">Event.01</a>
+                    <a href="archives/Innovison.pdf" class="text-decoration-none text-light bold">Innovison</a>
+                    <a href="archives/ohmyzsh!framework.html"
+                        class="text-decoration-none text-light bold">OhMyZsh! Installation</a>
+                    <a href="archives/PrerequisitesForInstallingNeoVIM.html"
+                        class="text-decoration-none text-light bold">Prerequisites for Installing NeoVIM</a>
+                    <a href="archives/InstallingNeoVIM.html" class="text-decoration-none text-light bold">Installing NeoVIM</a>
+                </div>
+            </div>
+            <a href="join.html" class="p-3 text-decoration-none text-light bold">Join</a>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex flex-row">
+            <a href="index.html" class="p-3 text-decoration-none text-white bold">Home</a>
+            <a href="about.html" class="p-3 text-decoration-none text-light bold">About</a>
+            <a href="preamble.html" class="p-3 text-decoration-none text-light bold">Preamble</a>
+            <div class="dropdown">
+                <button class="dropbtn p-3 text-decoration-none text-white bold">Archive</button>
+                <div class="dropdown-content">
+                    <a href="archives/pre.html" class="text-decoration-none text-light bold">Prerequisites (for event.01)</a>
+                    <a href="archives/e1.html" class="text-decoration-none text-light bold">Event.01</a>
+                    <a href="archives/Innovison.pdf" class="text-decoration-none text-light bold">Innovison</a>
+                    <a href="archives/ohmyzsh!framework.html"
+                        class="text-decoration-none text-light bold">OhMyZsh! Installation</a>
+                    <a href="archives/PrerequisitesForInstallingNeoVIM.html"
+                        class="text-decoration-none text-light bold">Prerequisites for Installing NeoVIM</a>
+                    <a href="archives/InstallingNeoVIM.html" class="text-decoration-none text-light bold">Installing NeoVIM</a>
+                </div>
+            </div>
+            <a href="join.html" class="p-3 text-decoration-none text-white bold">Join</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="jumbotron bg-transparent mb-0 pt-3 radius-0">
+        <div class="container">
+            <div class="col-xl-12">
+                <!-- Page Title -->
+                <h1 class="display-1 bold text-center color_white content__title text-4xl mb-5 sm:text-5xl md:text-6xl">
+                    WHAT IS CTF<span class="vim-caret">&nbsp;</span>
+                </h1>
+
+                <!-- Content Sections -->
+                <div class="text-grey text-base sm:text-lg md:text-xl text-spacey hackerFont lead mb-5">
+                    <!-- Introduction Section -->
+                    <section>
+                        <h2>INTRODUCTION TO CTF</h2>
+                        <p>
+                            Capture The Flag (CTF) is a type of competition where participants solve different types of puzzles related to cybersecurity.
+                            The goal is to find "flags" – hidden pieces of information, like text strings or files – by completing tasks that test your skills
+                            in areas such as hacking, cryptography, and problem-solving. These challenges can be about breaking into websites, cracking codes,
+                            or analyzing computer programs. CTFs are a fun and educational way for beginners to <strong>learn about cybersecurity</strong> and improve their skills
+                            while competing with others.
+                        </p>
+                    </section>
+
+                    <!-- Who Is It For Section -->
+                    <br><br>
+                    <section>
+                        <h2>WHO IS IT FOR?</h2>
+                        <p>
+                            No experience? No problem! Whether you're just starting out in cybersecurity and hacking or you're already an expert,
+                            you are welcome here. This is a space for everyone to learn, grow, and push the boundaries of what's possible.
+                            The only thing you need is the right mindset – a mentality of never giving up, no matter how challenging the task.
+                            Come join us and level up your skills!
+                        </p>
+                    </section>
+                    
+                    <br><br>
+                    <!-- Why Should You Join Section -->
+                    <section>
+                        <h2>WHY SHOULD YOU JOIN?</h2>
+                        <p>CTFs are not just competitions; they're gateways to mastering cybersecurity. By participating, you'll:</p>
+                        <ul>
+                            <li>Build your technical skills in a practical, hands-on way.</li>
+                            <li>Gain exposure to real-world cybersecurity challenges.</li>
+                            <li>Collaborate with like-minded individuals and network with professionals.</li>
+                            <li>Boost your resume and career prospects.</li>
+                        </ul>
+                    </section>
+                    <br><br>
+                    <!-- CTF Formats Section -->
+                    <section>
+                        <h2>CTF FORMATS</h2>
+                        <p>Capture The Flag competitions come in various formats, each designed to test different skill sets:</p>
+                        <ul>
+                            <li>
+                                <strong>Jeopardy Style:</strong> Teams solve various challenges in categories like cryptography,
+                                reverse engineering, web exploitation, and forensics. Each solved challenge awards points based
+                                on difficulty.
+                            </li>
+                            <li>
+                                <strong>Attack-Defense:</strong> Teams are provided with identical vulnerable systems and must secure their
+                                own setup while attempting to exploit others. This format emphasizes offensive and defensive skills.
+                            </li>
+                            <li>
+                                <strong>Mixed:</strong> Combines elements of both Jeopardy and Attack-Defense, offering a comprehensive challenge.
+                            </li>
+                        </ul>
+                    </section>
+                    <br><br>
+                    <!-- Common CTF Topics Section -->
+                    <section>
+                        <h2>COMMON CTF TOPICS</h2>
+                        <p>Below are some common areas where you can expect challenges:</p>
+                        <ul>
+                            <li><strong>Cryptography:</strong> Analyze and break encrypted data using algorithms and logic.</li>
+                            <li><strong>Reverse Engineering:</strong> Decompile software to understand its functionality and identify vulnerabilities.</li>
+                            <li><strong>Web Exploitation:</strong> Find and exploit security loopholes in web applications.</li>
+                            <li><strong>Binary Exploitation:</strong> Manipulate binary files to exploit system-level vulnerabilities.</li>
+                            <li><strong>Forensics:</strong> Analyze digital artifacts to uncover evidence or patterns.</li>
+                        </ul>
+                    </section>
+                    <br><br>
+                    <!-- Types of Flags Section -->
+                    <section>
+                        <h2>TYPES OF FLAGS IN CTFs</h2>
+                        <p>When solving challenges, you’ll often come across these types of flags:</p>
+                        <ul>
+                            <li><strong>Standard Flags:</strong> These follow formats like <code>CTF{example_flag}</code> or similar and are explicitly hidden in the challenge.</li>
+                            <li><strong>Hidden Flags:</strong> These may require deeper analysis or unconventional thinking to uncover.</li>
+                            <li><strong>Dynamic Flags:</strong> Common in Attack-Defense CTFs, these flags change over time or depend on a live system.</li>
+                        </ul>
+                    </section>
+                    <br><br>
+                    <!-- Resources to Get Started Section -->
+                    <section>
+                        <h2>RESOURCES TO GET STARTED</h2>
+                        <p>Want to dive into the CTF world? Here are some resources:</p>
+                        <ul>
+                            <li><a href="https://ctftime.org/" target="_blank">CTFTime</a>: Your go-to hub for upcoming CTF events.</li>
+                            <li><a href="https://picoctf.org/" target="_blank">PicoCTF</a>: Beginner-friendly CTF challenges designed for students.</li>
+                            <li><a href="https://overthewire.org/wargames/" target="_blank">OverTheWire</a>: Hands-on games to master command-line hacking.</li>
+                            <li><a href="https://tryhackme.com/" target="_blank">TryHackMe</a>: Interactive labs for learning cybersecurity concepts.</li>
+                            <li><a href="https://hackthebox.com/" target="_blank">Hack The Box</a>: Realistic pentesting environments for all skill levels.</li>
+                            <li><a href="https://www.reddit.com/r/securityCTF/comments/nzlhto/how_to_get_started_with_ctfs/?rdt=58855"
+                                target="_blank">Reddit - How to Get Started with CTFs</a></li>
+                        <li><a href="https://medium.com/@cham3leon/beginners-guide-to-ctfs-1ce99ee0071a" target="_blank">Medium - Beginners Guide to CTFs</a></li>
+                        </ul>
+                    </section>
+                    <br><br>
+                    <!-- Tips for Success Section -->
+                    <section>
+                        <h2>TIPS FOR SUCCESS</h2>
+                        <p>Here are some strategies to help you excel in CTFs:</p>
+                        <ul>
+                            <li><strong>Form a strong team:</strong> Collaborate with people who have diverse skills in areas like coding, networking, and analysis.</li>
+                            <li><strong>Start small:</strong> Begin with beginner-friendly CTFs to build confidence and foundational knowledge.</li>
+                            <li><strong>Practice regularly:</strong> Consistent effort is key. Use platforms like Hack The Box and TryHackMe to stay sharp.</li>
+                            <li><strong>Take notes:</strong> Document your approaches and solutions for future reference.</li>
+                            <li><strong>Learn from failures:</strong> Analyze what went wrong, research solutions, and improve for the next challenge.</li>
+                        </ul>
+                    </section>
+                    <br><br>
+                    <!-- Skills You'll Develop Section -->
+                    <section>
+                        <h2>SKILLS YOU'LL DEVELOP IN CTFs</h2>
+                        <p>CTFs help build essential skills for anyone interested in cybersecurity or problem-solving, including:</p>
+                        <ul>
+                            <li><strong>Critical Thinking:</strong> Approach problems logically and creatively.</li>
+                            <li><strong>Technical Expertise:</strong> Learn and apply tools, coding, and cybersecurity techniques.</li>
+                            <li><strong>Collaboration:</strong> Work as part of a team to divide tasks and share knowledge.</li>
+                            <li><strong>Resilience:</strong> Develop a mindset to tackle challenges repeatedly until solved.</li>
+                        </ul>
+                    </section>
+                    <br><br>
+
+                    <!-- CTF Communities Section -->
+                    <section>
+                        <h2>CTF COMMUNITIES</h2>
+                        <p>Joining a community is a great way to enhance your learning. Here are some platforms where you can interact with like-minded individuals:</p>
+                        <ul>
+                            <li><strong>CTFTime Forums:</strong> Discuss challenges, share tips, and find teammates.</li>
+                            <li><strong>Discord Groups:</strong> Many CTF platforms have dedicated Discord communities for support and collaboration.</li>
+                            <li><strong>Reddit Communities:</strong> Subreddits like <a href="https://www.reddit.com/r/cybersecurity/" target="_blank">r/cybersecurity</a> and <a href="https://www.reddit.com/r/hacking/" target="_blank">r/hacking</a> are great resources.</li>
+                        </ul>
+                    </section>
+                    <br><br>
+
+                    <!-- Real-World Impact Section -->
+                    <section>
+                        <h2>REAL-WORLD IMPACT OF CTFs</h2>
+                        <p>CTFs aren’t just games—they simulate real-world scenarios that professionals face in cybersecurity. By participating, you’ll gain:</p>
+                        <ul>
+                            <li><strong>Practical Knowledge:</strong> Learn how exploits work in real systems.</li>
+                            <li><strong>Industry Recognition:</strong> CTFs are often highlighted on resumes and portfolios.</li>
+                            <li><strong>Career Opportunities:</strong> Many cybersecurity firms recruit directly from CTF communities.</li>
+                        </ul>
+                    </section>
+                    <br><br>
+
+                    <!-- Popular CTF Events Section -->
+                    <section>
+                        <h2>POPULAR CTF EVENTS</h2>
+                        <p>Ready to participate? Here are some well-known events in the CTF world:</p>
+                        <ul>
+                            <li><strong>DEF CON CTF:</strong> One of the most prestigious competitions, held annually at the DEF CON hacker conference.</li>
+                            <li><strong>Google CTF:</strong> Hosted by Google, it offers beginner and advanced tracks for participants.</li>
+                            <li><strong>Facebook CTF:</strong> A competition organized by Meta, featuring Jeopardy-style challenges.</li>
+                            <li><strong>NCL (National Cyber League):</strong> Focused on developing practical cybersecurity skills for students and professionals.</li>
+                        </ul>
+                    </section>
+                    <br><br>
+
+                    <section>
+                        <h2>JOIN US FOR AN EXCITING CTF EXPERIENCE!</h2>
+                        <p>We invite all cybersecurity enthusiasts to our college's thrilling Capture The Flag (CTF) event! Whether you're a beginner eager to learn or a seasoned pro looking for a challenge, this is your chance to test your skills, solve puzzles, and dive into the exciting world of cybersecurity. Come, connect with like-minded individuals, and let’s unravel the mysteries together!</p>
+                    </section>
+                    <br><br>
+                </div>
+
+                <!-- Social Icons -->
+                <div class="social-icons">
+                    <a href="https://github.com/securitb" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="https://t.me/securitb" class="social-icon"><i class="fab fa-telegram"></i></a>
+                    <a href="https://www.linkedin.com/company/securitb" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://chat.whatsapp.com/Jq5462NB78wJzXhd7IIvDN" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://instagram.com/secur1t" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery, Popper.js, and Bootstrap JS -->
+        <script>
+            let burgerClick = false;
+
+            // Function to Toggle the Hamburger Menu
+            function toggleBurger() {
+                burgerClick = !burgerClick;
+                let burgerMenu = document.getElementById("burger");
+                if (burgerClick) {
+                    burgerMenu.classList.remove("burgerdropdownv");
+                    burgerMenu.classList.add("burgerdropdown");
+                } else {
+                    burgerMenu.classList.remove("burgerdropdown");
+                    burgerMenu.classList.add("burgerdropdownv");
+                }
+            }
+
+            // Note: Removed showButton function as there's no submit button on this page
+        </script>
+        <!-- jQuery CDN -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+        <!-- Popper.js CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+        <!-- Bootstrap JS CDN -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+    </body>
+
+</html>

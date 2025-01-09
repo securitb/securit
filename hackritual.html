@@ -7,33 +7,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>secuRIT</title>
 
+    <!-- External Stylesheets -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
         integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    
     <link rel="stylesheet" href="css/bootstrap4-neon-glow.min.css">
-
-    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
     <link rel="stylesheet" href="css/main.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="">
+<body>
     <!-- Navigation Bar -->
     <div class="mt-20 mb-10 max-w-[90%] mx-auto md:justify-between md:items-center md:flex md:flex-row">
+        <!-- Logo for Desktop -->
         <div class="hidden md:flex flex-row">
             <a href="index.html"><img src="./images/securitlogo.png" height="80" width="80" alt="secuRIT Logo" /></a>
         </div>
-        <div class="md:hidden ">
-            <button onclick="show()" class=" flex-col justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 24 24"
+
+        <!-- Hamburger Menu for Mobile -->
+        <div class="md:hidden">
+            <button onclick="toggleBurger()" class="flex-col justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                     style="fill:#FFFFFF;">
                     <path
-                        d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z" />
+                        d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z 
+                           M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z 
+                           M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z" />
                 </svg>
             </button>
         </div>
-        <div id="burger" class=" flex-col md:hidden burgerdropdown  gap-3 p-4">
+
+        <!-- Mobile Menu -->
+        <div id="burger" class="flex-col md:hidden burgerdropdown gap-3 p-4 hidden">
             <a href="index.html" class="p-3 text-decoration-none text-light bold">Home</a>
             <a href="about.html" class="p-3 text-decoration-none text-light bold">About</a>
             <a href="preamble.html" class="p-3 text-decoration-none text-light bold">Preamble</a>
@@ -44,110 +52,129 @@
                     <a href="archives/e1.html" class="text-decoration-none text-light bold">event.01</a>
                     <a href="archives/Innovison.pdf" class="text-decoration-none text-light bold">Innovison</a>
                     <a href="archives/ohmyzsh!framework.html" class="text-decoration-none text-light bold">OhMyZsh! Installation</a>
-                    <a href="archives/PrerequisitesForInstallingNeoVIM.html" class="text-decoration-none text-light bold">prerequisites for installing NeoVIM</a>
+                    <a href="archives/PrerequisitesForInstallingNeoVIM.html"
+                        class="text-decoration-none text-light bold">prerequisites for installing NeoVIM</a>
                     <a href="archives/InstallingNeoVIM.html" class="text-decoration-none text-light bold">Installing NeoVIM</a>
-                    <a href="archives/symlinks_alias_time_tac.html" class="text-decoration-none text-light bold">Common terms 01</a>
-                    <a href="archives/Installation_guide.html" class="text-decoration-none text-light bold">Installation guide</a>
-                    <a href="archives/MoreCustomizationAndTools01.html" class="text-decoration-none text-light bold">More customization and tools 01</a>
+                    <a href="archives/symlinks_alias_time_tac.html" class="text-decoration-none text-light bold">Common
+                        terms 01</a>
+                    <a href="archives/Installation_guide.html" class="text-decoration-none text-light bold">Installation
+                        guide</a>
+                    <a href="archives/MoreCustomizationAndTools01.html" class="text-decoration-none text-light bold">More
+                        customization and tools 01</a>
                 </div>
             </div>
             <a href="join.html" class="p-3 text-decoration-none text-light bold">Join</a>
         </div>
-        <div class="">
-            <div class="flex hidden md:flex flex-row ">
-                <a href="index.html" class="p-3 text-decoration-none text-white bold">Home</a>
-                <a href="about.html" class="p-3 text-decoration-none text-light bold">About</a>
-                <a href="preamble.html" class="p-3 text-decoration-none text-light bold">Preamble</a>
-                <div class="dropdown">
-                    <button class="dropbtn p-3 text-decoration-none text-white bold">Archive</button>
-                    <div class="dropdown-content">
-                        <a href="archives/pre.html" class="text-decoration-none text-light bold">prerequisites(for event.01)</a>
-                        <a href="archives/e1.html" class="text-decoration-none text-light bold">event.01</a>
-                        <a href="archives/Innovison.pdf" class="text-decoration-none text-light bold">Innovison</a>
-                        <a href="archives/ohmyzsh!framework.html" class="text-decoration-none text-light bold">OhMyZsh! Installation</a>
-                        <a href="archives/PrerequisitesForInstallingNeoVIM.html" class="text-decoration-none text-light bold">prerequisites for installing NeoVIM</a>
-                        <a href="archives/InstallingNeoVIM.html" class="text-decoration-none text-light bold">Installing NeoVIM</a>
-                    </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex flex-row">
+            <a href="index.html" class="p-3 text-decoration-none text-white bold">Home</a>
+            <a href="about.html" class="p-3 text-decoration-none text-light bold">About</a>
+            <a href="preamble.html" class="p-3 text-decoration-none text-light bold">Preamble</a>
+            <div class="dropdown">
+                <button class="dropbtn p-3 text-decoration-none text-white bold">Archive</button>
+                <div class="dropdown-content">
+                    <a href="archives/pre.html" class="text-decoration-none text-light bold">Prerequisites (for
+                        event.01)</a>
+                    <a href="archives/e1.html" class="text-decoration-none text-light bold">event.01</a>
+                    <a href="archives/Innovison.pdf" class="text-decoration-none text-light bold">Innovison</a>
+                    <a href="archives/ohmyzsh!framework.html" class="text-decoration-none text-light bold">OhMyZsh!
+                        Installation</a>
+                    <a href="archives/PrerequisitesForInstallingNeoVIM.html"
+                        class="text-decoration-none text-light bold">Prerequisites for Installing
+                        NeoVIM</a>
+                    <a href="archives/InstallingNeoVIM.html" class="text-decoration-none text-light bold">Installing
+                        NeoVIM</a>
                 </div>
-                <a href="join.html" class="p-3 text-decoration-none text-white bold">Join</a>
             </div>
+            <a href="join.html" class="p-3 text-decoration-none text-white bold">Join</a>
         </div>
-        
     </div>
 
+    <!-- Main Content -->
     <div class="jumbotron bg-transparent mb-0 pt-3 radius-0">
         <div class="container">
-            <div class="">
-                <div class="col-xl-12">
-                    <h1 class="display-1 bold text-center color_white content__title text-4xl mb-5 sm:text-5xl md:text-6xl">HACKRITUAL<span class="vim-caret">&nbsp;</span></h1>
-                    <p class="text-grey  text-base sm:text-lg md:text-xl text-spacey hackerFont lead mb-5">
-                        <li>hackRITual is a competitive CTF event open to all skill levels! Test your cybersecurity skills across various challenges.</li>
-                        <li>Prizepool worth ₹10,000</li>
-                        <li>Competition on 15th January 2025</li>
-                        <li>OPEN TO ALL CYBERSECURITY ENTHUSIASTS!</li>
-                        Gear up for an event filled with challenges and learning! See you at hackRITual! <br>
-                        <strong>Registrations are now open!</strong>
-                    </p>
-                    <p class="text-grey text-spacey hackerFont lead mb-5">
-                        Judging criteria: Problem-Solving, Technical Execution, Creativity, Speed, Teamwork, and Innovation.
-                    </p>
-                    <p><a href="./images/ctfbrochure.jpg">click here to access the brochure</a></p>
-                    <p class="text-grey text-spacey hackerFont lead mb-5">
-                        For all and any queries, feel free to ask them in our WhatsApp group.
-                    </p>
-                    <p class="text-grey text-spacey hackerFont lead mb-5">
-                        Registrations open now! Don't miss your chance to participate.
-                    </p>
-                    <div class="w-full hackerFont">
-                        <div class="">
-                            <!-- Additional Scripts or Elements if needed -->
-                        </div>                            
-                    </div>
-                    
-                    <!-- Registration Form -->
-                    <div class="text-center mt-6">
-                        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { window.location='success.html'; }"></iframe>
-                        <form action="https://docs.google.com/forms/d/e/1FAIpQLSf4oS3P7AX_rLs7zR29vP9Xi0OW5xQsnfEpmWBLnyLssUkQ6Q/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
-                            <h2>CTF 2025 - TEAM REGISTRATION</h2><br>
-                            <div class="form-group">
-                                <label for="team-name">Team Name *</label>
-                                <input name="entry.463462567" id="team-name" type="text" class="form-control" placeholder="Team Name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="team-leader-name">Team Leader Name *</label>
-                                <input name="entry.1719802597" id="team-leader-name" type="text" class="form-control" placeholder="Team Leader Name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="team-leader-usn">Team Leader USN *</label>
-                                <input name="entry.1300489388" id="team-leader-usn" type="text" class="form-control" placeholder="Team Leader USN" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="team-leader-email">Team Leader E-Mail *</label>
-                                <input name="entry.873071817" id="team-leader-email" type="email" class="form-control" placeholder="Team Leader E-Mail" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="team-member-name">Team Member Name</label>
-                                <input name="entry.1653712398" id="team-member-name" type="text" class="form-control" placeholder="Team Member Name">
-                            </div>
-                            <div class="form-group">
-                                <label for="team-member-usn">Team Member USN</label>
-                                <input name="entry.2113795248" id="team-member-usn" type="text" class="form-control" placeholder="Team Member USN">
-                            </div>
-                            <div class="form-group">
-                                <label for="team-member-email">Team Member E-Mail</label>
-                                <input name="entry.240649043" id="team-member-email" type="email" class="form-control" placeholder="Team Member E-Mail">
-                            </div>
-                            <div class="custom-control custom-checkbox my-4">
-                                <input type="checkbox" class="custom-control-input" id="agree-rules" onchange="showButton()">
-                                <label class="custom-control-label" for="agree-rules">I agree to abide by the rules.</label>
-                            </div>
-                            <div class="col-xl-12" id="submit-button" style="display:none;">
-                                <input class="btn btn-outline-danger btn-shadow px-3 my-2 ml-0 ml-sm-1 text-left typewriter" type="submit" value="Submit Team Details" />
-                            </div>
-                        </form>
+            <div class="col-xl-12">
+                <h1 class="display-1 bold text-center color_white content__title text-4xl mb-5 sm:text-5xl md:text-6xl">
+                    HACKRITUAL<span class="vim-caret">&nbsp;</span></h1>
+                <p class="text-grey text-base sm:text-lg md:text-xl text-spacey hackerFont lead mb-5">
+                    <li>hackRITual is a competitive CTF event open to all skill levels! Test your cybersecurity skills across various challenges.</li>
+                    <li>Prizepool worth ₹10,000</li>
+                    <li>Competition on 15th January 2025</li>
+                    <li>OPEN TO ALL CYBERSECURITY ENTHUSIASTS!</li>
+                    Gear up for an event filled with challenges and learning! See you at hackRITual! <br>
+                    <strong>Registrations are now open!</strong>
+                </p>
+                <p class="text-grey text-spacey hackerFont lead mb-5">
+                    Judging criteria: Problem-Solving, Technical Execution, Creativity, Speed, Teamwork, and Innovation.
+                </p>
+                <p><a href="./images/ctfbrochure.jpg">click here to access the brochure</a></p>
+                <p class="text-grey text-spacey hackerFont lead mb-5">
+                    For all and any queries, feel free to ask them in our WhatsApp group.
+                </p>
+                <p class="text-grey text-spacey hackerFont lead mb-5">
+                    Registrations open now! Don't miss your chance to participate.
+                </p>
+                <div class="w-full hackerFont">
+                    <div class="">
+                        <!-- Additional Scripts or Elements if needed -->
                     </div>
                 </div>
+
+                <!-- "What is CTF?" Button -->
+                <div class="text-center mt-4">
+                    <!-- Updated Button to Match Submit Registration Form Styles -->
+                    <button type="button" class="btn btn-outline-danger btn-shadow px-3 my-2 ml-0 ml-sm-1 text-left typewriter" onclick="window.location.href='./whatisctf.html'">
+                        What is CTF?
+                    </button>
+                </div>
+
+                <!-- Registration Form -->
+                <div class="text-center mt-6">
+                    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { window.location='success.html'; }"></iframe>
+                    <form action="https://docs.google.com/forms/d/e/1FAIpQLSf4oS3P7AX_rLs7zR29vP9Xi0OW5xQsnfEpmWBLnyLssUkQ6Q/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
+                        <h2>CTF 2025 - TEAM REGISTRATION</h2><br>
+                        <div class="form-group">
+                            <label for="team-name">Team Name *</label>
+                            <input name="entry.463462567" id="team-name" type="text" class="form-control" placeholder="Team Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="team-leader-name">Team Leader Name *</label>
+                            <input name="entry.1719802597" id="team-leader-name" type="text" class="form-control" placeholder="Team Leader Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="team-leader-usn">Team Leader USN *</label>
+                            <input name="entry.1300489388" id="team-leader-usn" type="text" class="form-control" placeholder="Team Leader USN" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="team-leader-email">Team Leader E-Mail *</label>
+                            <input name="entry.873071817" id="team-leader-email" type="email" class="form-control" placeholder="Team Leader E-Mail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="team-member-name">Team Member Name</label>
+                            <input name="entry.1653712398" id="team-member-name" type="text" class="form-control" placeholder="Team Member Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="team-member-usn">Team Member USN</label>
+                            <input name="entry.2113795248" id="team-member-usn" type="text" class="form-control" placeholder="Team Member USN">
+                        </div>
+                        <div class="form-group">
+                            <label for="team-member-email">Team Member E-Mail</label>
+                            <input name="entry.240649043" id="team-member-email" type="email" class="form-control" placeholder="Team Member E-Mail">
+                        </div>
+                        <div class="custom-control custom-checkbox my-4">
+                            <input type="checkbox" class="custom-control-input" id="agree-rules" onchange="showButton()">
+                            <label class="custom-control-label" for="agree-rules">I agree to abide by the rules.</label>
+                        </div>
+                        <div class="col-xl-12" id="submit-button" style="display:none;">
+                            <button type="submit" class="btn btn-outline-danger btn-shadow px-3 my-2 ml-0 ml-sm-1 text-left typewriter">
+                                Submit Team Details
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
+            <!-- Social Icons -->
             <div class="social-icons">
                 <a href="https://github.com/securitb" class="social-icon"><i class="fab fa-github"></i></a>
                 <a href="https://t.me/securitb" class="social-icon"><i class="fab fa-telegram"></i></a>
@@ -158,24 +185,25 @@
         </div>
     </div>
 
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script>
         let burgerClick = false;
-        function show() {
+
+        // Toggle Burger Menu
+        function toggleBurger() {
             burgerClick = !burgerClick;
-            let a = document.getElementById("burger");
-            if (burgerClick === true) {
-                a.classList.remove("burgerdropdownv");
-                a.classList.add("burgerdropdown");
-            }
-            else {
-                a.classList.remove("burgerdropdown");
-                a.classList.add("burgerdropdownv");
+            let burgerMenu = document.getElementById("burger");
+            if (burgerClick) {
+                burgerMenu.classList.remove("burgerdropdownv");
+                burgerMenu.classList.add("burgerdropdown");
+            } else {
+                burgerMenu.classList.remove("burgerdropdown");
+                burgerMenu.classList.add("burgerdropdownv");
             }
         }
 
+        // Show Submit Button Upon Agreement
         function showButton() {
             const checkbox = document.getElementById('agree-rules');
             const submitButton = document.getElementById('submit-button');
@@ -190,8 +218,8 @@
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
