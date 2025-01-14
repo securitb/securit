@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riddle 3</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(135deg, #333 0%, #1a1a1a 100%);
+            color: #0f0; /* Green text for a coding/hacking theme */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .container {
+            border: 1px solid #0f0; /* Green border */
+            padding: 20px;
+            border-radius: 30px;
+            box-shadow: 0 4px 8px rgba(15, 255, 0, 0.3); /* Green glow */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 3em;
+            animation: typewriter 4s steps(44) 1s both;
+            background-image: linear-gradient(90deg, #0f0, #333, #0f0);
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            white-space: nowrap;
+            overflow: hidden;
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+        input, button {
+            padding: 15px;
+            margin: 15px;
+            font-size: 1.2em;
+            background: #333;
+            border: 2px solid #0f0;
+            color: #0f0;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #222;
+            color: #9f9;
+        }
+        .secret-button {
+            font-size: 1.5em;
+            padding: 20px;
+            animation: pulse 2s infinite;
+            cursor: pointer;
+            display: none; /* Initially hidden */
+        }
+        @keyframes typewriter {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="alertBoxContainer" style="width: 100%; display: flex; justify-content: center; margin-bottom: 20px;"></div>
+        <h1>Riddle 3</h1>
+        <p>Solve this riddle to get the third part of the secret path: <br> In a survey of 60 people, 25 liked coffee, 30 liked tea, and 15 liked both coffee and tea. How many people did not like either coffee or tea?</p>
+        <input type="text" id="answer3" placeholder="Your answer">
+        <div style="display: flex; justify-content: space-around; margin-top: 20px;">
+            <button class="styled-button" onclick="checkAnswer3()">Submit</button>
+            <a href="secrets.html"><button class="styled-button secret-button" id="secretPathButton">SECRET PATH</button></a>
+        </div>
+    </div>
+    <script src="assets/script.js"></script>
+    <script>
+        function customAlert(msg) {
+            const alertBox = document.createElement('div');
+            alertBox.innerHTML = msg;
+            alertBox.style.padding = '30px';
+            alertBox.style.marginTop = '20px';
+            alertBox.style.borderRadius = '10px';
+            alertBox.style.background = 'rgba(15, 255, 0, 0.3)';
+            alertBox.style.color = '#0f0';
+            alertBox.style.border = '1px solid #0f0';
+            alertBox.style.boxShadow = '0 0 10px rgba(15, 255, 0, 0.5)';
+            alertBox.style.animation = 'fadeIn 1s both';
+            alertBox.style.fontSize = '1.8em'; // Increased font size by 1.5 times from 1.2em
+            document.getElementById('alertBoxContainer').appendChild(alertBox);
+        }
+        function checkAnswer3() {
+            const answer = document.getElementById('answer3').value;
+            if (answer === '20') {
+                customAlert('Correct! You have Unlocked the SECRET PATH !');
+                document.getElementById('secretPathButton').style.display = 'block'; // Reveal the SECRET PATH button
+            } else {
+                customAlert('Incorrect. try again');
+            }
+        }
+    </script>
+</body>
+</html>
+

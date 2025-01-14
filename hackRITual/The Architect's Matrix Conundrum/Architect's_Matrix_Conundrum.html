@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIT Matrix Challenge</title>
+    <style>
+        body {
+            background-color: black;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            overflow: hidden;
+        }
+        #canvas {
+            display: block;
+        }
+        .challenge-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            text-align: center;
+            text-shadow: 0 0 5px #00ff00;
+        }
+        /* Hint: The first part is where it all begins */
+        .hidden-start {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <div class="challenge-text" style="font-size: 36px; color: #ff1d1d; font-weight: bold; animation: glitch 1s linear infinite;">
+        Can you decrypt the <span style="color: #00ff00; font-family: 'Courier New', monospace;">securIT</span> matrix?
+    </div>
+    <style>
+        @keyframes glitch {
+            0%, 100% {
+                text-shadow: 2px 0 #00ff00, -2px 0 #ff0000;
+            }
+            20%, 40%, 60%, 80% {
+                text-shadow: -2px 0 #00ff00, 2px 0 #ff0000;
+            }
+        }
+    </style>
+    <div class="hidden-start">secuRIT{hack_the</div>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const columns = canvas.width / 20;
+        const drops = [];
+
+        // Hint: The second part is where you are
+        drops.push("_RIT_");
+
+        for (let i = 0; i < columns; i++) {
+            drops[i] = 1;
+        }
+
+        function draw() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#00ff00';
+            ctx.font = '15px monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = String.fromCharCode(Math.random() * 128);
+                ctx.fillText(text, i * 20, drops[i] * 20);
+
+                if (drops[i] * 20 > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        setInterval(draw, 33);
+
+        // Decoy: Don't be fooled by false flags
+        const decoy = "CTF{RAMAIAH_INSTITUTE_OF_TECHNOLOGY}";
+
+        // Hint: The third part is what you're trying to hack
+        const encodedPart = btoa("matrix");
+
+        setTimeout(() => {
+            const hiddenChars = "_securIT_style}";
+            let index = 0;
+            const interval = setInterval(() => {
+                if (index < hiddenChars.length) {
+                    ctx.fillStyle = '#ff0000';
+                    ctx.font = '20px monospace';
+                    ctx.fillText(hiddenChars[index], Math.random() * canvas.width, Math.random() * canvas.height);
+                    index++;
+                } else {
+                    clearInterval(interval);
+                }
+            }, 1000);
+        }, 10000);
+
+        // Decoy: Another misdirection
+        console.log("CTF{CYBERSECURITY_IS_FUN}");
+
+        // Hint: Assemble the pieces to reveal the truth
+    </script>
+</body>
+</html>
