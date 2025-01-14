@@ -1,3 +1,0 @@
-User-agent: *
-Route to Proceed: /riddle1.html
-
