@@ -1,0 +1,1421 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome file</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="steg">Steg</h1>
+<h3 id="help-trinity">Help Trinity</h3>
+<h4 id="solution-to-the-neo-trinity-challenge">Solution to the Neo Trinity Challenge</h4>
+<h5 id="challenge-description">Challenge Description</h5>
+<p>In this challenge, participants are tasked with extracting a hidden flag from an image file using steganography techniques. The goal is to uncover the hidden message embedded within the image.</p>
+<h5 id="steps-to-solve-the-challenge">Steps to Solve the Challenge</h5>
+<h5 id="step-1-upload-the-image-to-aperisolve">Step 1: Upload the Image to AperiSolve</h5>
+<p>First, upload the provided image file to the&nbsp;<a href="https://aperisolve.fr/">AperiSolve</a>&nbsp;website. AperiSolve is an online tool that analyzes images for hidden data using various steganography techniques.</p>
+<h5 id="step-2-analyze-the-image">Step 2: Analyze the Image</h5>
+<p>Once the image is uploaded, navigate to the&nbsp;<strong>[+] Superimposed</strong>&nbsp;section on the AperiSolve results page. This section reveals hidden data embedded within the layers of the image.</p>
+<h5 id="step-3-extract-the-flag">Step 3: Extract the Flag</h5>
+<p>In the&nbsp;<strong>[+] Superimposed</strong>&nbsp;section, you will find the hidden flag. The flag is encoded within a layer inside the image. For this challenge, the hidden flag is:</p>
+<pre><code>secuRIT{YOU_TOOK_TH3_R3D_P1LL_DIDNT_YOU}
+</code></pre>
+<h4 id="tools-used">Tools Used</h4>
+<ul>
+<li><strong>AperiSolve</strong>: An online tool for analyzing images for hidden data using steganography techniques. It supports multiple methods to uncover hidden messages within images.</li>
+</ul>
+<h4 id="conclusion">Conclusion</h4>
+<p>By following these steps and using AperiSolve, participants can successfully uncover the hidden flag within the image. This challenge demonstrates the use of steganography techniques to hide and extract information. Good luck and happy hunting!<br>
+![[HelpTrinityColored.png]]<br>
+![[HelpTrinityAprisolve.png]]</p>
+<h3 id="dimensional-secrets">Dimensional Secrets</h3>
+<h4 id="challenge-description-1">Challenge Description</h4>
+<p>You receive an audio file. Your task is to:</p>
+<ol>
+<li>Decode the Morse code hidden in the audio</li>
+<li>Decipher the text using a Caesar cipher with the audio length as the key</li>
+<li>Add dots and slashs to the deciphered text to form a website URL</li>
+<li>Find the flag, which is the product of the dimensions of the background picture on the website</li>
+</ol>
+<h4 id="solution">Solution</h4>
+<h5 id="step-1-decode-the-morse-code">Step 1: Decode the Morse Code</h5>
+<ul>
+<li>Listen to the audio carefully</li>
+<li>Transcribe the Morse code (e.g.,&nbsp;<code>... --- ... -.. --- - -.-. --- --</code>)</li>
+<li>Use an online Morse code decoder (like morsecode.world) to convert to text</li>
+<li>The decoded text is:&nbsp;<code>SHMXTQKBNLBGQNLOXRZM</code></li>
+<li>OR use a morse audio to text converter tools like “<a href="https://morsecode.world/international/decoder/audio-decoder-adaptive.html">https://morsecode.world/international/decoder/audio-decoder-adaptive.html</a>”</li>
+</ul>
+<h5 id="step-2-caesar-cipher-decryption">Step 2: Caesar Cipher Decryption</h5>
+<ul>
+<li>Check the length of the original audio file (25s)</li>
+<li>Use 25 as the key for the Caesar cipher</li>
+<li>Use an online Caesar cipher decoder (like <a href="http://cryptii.com">cryptii.com</a>)</li>
+<li>Input the decoded Morse code text and shift by 25</li>
+<li>The decrypted text is:&nbsp;<code>tinyurlcomchrompysan</code></li>
+</ul>
+<h5 id="step-3-access-the-website">Step 3: Access the Website</h5>
+<ul>
+<li>Add dots and slashs to the decrypted text to form a valid URL</li>
+<li>The URL is:&nbsp;<code>tinyurl.com/chrompysan</code></li>
+<li>Open this URL in a web browser</li>
+</ul>
+<h5 id="step-4-find-the-flag">Step 4: Find the Flag</h5>
+<ul>
+<li>Download the image</li>
+<li>Check the image dimensions (619x127)</li>
+<li>Flag is the product of the dimensions</li>
+</ul>
+<h4 id="flag">Flag</h4>
+<p>The flag is:&nbsp;<code>secuRITCTF{78613}</code></p>
+<h4 id="tools-used-1">Tools Used</h4>
+<ul>
+<li>Audacity - for audio file manipulation</li>
+<li>morsecode.world - for Morse code decoding or audio decoding</li>
+<li><a href="http://cryptii.com">cryptii.com</a> - for Caesar cipher decryption</li>
+<li>Web browser developer tools - for inspecting the website</li>
+</ul>
+<h4 id="lessons-learned">Lessons Learned</h4>
+<ul>
+<li>Audio manipulation and steganography techniques</li>
+<li>Morse code transcription and decoding</li>
+<li>Understanding and applying the Caesar cipher</li>
+<li>Web inspection and image analysis</li>
+<li>The importance of attention to detail in multi-step challenges</li>
+</ul>
+<h4 id="conclusion-1">Conclusion</h4>
+<p>This challenge combined various elements of cryptography, steganography, and web analysis. It required participants to think creatively and use a combination of tools to progress through each step. The challenge emphasizes the importance of audio analysis in CTFs and demonstrates how information can be hidden in unconventional ways.</p>
+<h3 id="phunsukh-wangdu">Phunsukh Wangdu</h3>
+<p>This challenge involves extracting, assembling, and decoding a QR code hidden within image metadata. The flag is revealed by following the steps outlined below.</p>
+<h4 id="step-1-extracting-the-qr-code-pieces">Step 1: Extracting the QR Code Pieces</h4>
+<p>The hidden QR code pieces are embedded in the image metadata. Here’s how to extract them:</p>
+<ol>
+<li>Visit&nbsp;<a href="https://www.aperisolve.com/">AperiSolve</a>.</li>
+<li>Upload the given image to analyze its metadata.</li>
+<li>Scroll down to locate the QR code pieces (e.g.,&nbsp;<code>p1.jpg</code>,&nbsp;<code>p2.jpg</code>, etc.).</li>
+<li>Download the ZIP file containing these pieces. (the hint that this is a qr can be taken from the fact that the binwalk part contains 400 images which seems kinda sus , I know it’s difficult)</li>
+</ol>
+<p>![[Pasted image 20250115101350.png]]</p>
+<h4 id="step-2-merging-the-qr-code-pieces">Step 2: Merging the QR Code Pieces</h4>
+<p>Use the below python script to merge the 400 images and make a qr code out of them</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">from</span> PIL <span class="token keyword">import</span> Image
+<span class="token keyword">import</span> os
+<span class="token keyword">import</span> re
+
+<span class="token keyword">def</span> <span class="token function">merge_qr_code_pieces</span><span class="token punctuation">(</span>image_folder<span class="token punctuation">,</span> output_path<span class="token punctuation">,</span> grid_size<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    Merge QR code pieces into a single QR code image.
+    
+    :param image_folder: Path to the directory containing QR code pieces.
+    :param output_path: Path where the assembled QR code image will be saved.
+    :param grid_size: Number of pieces along one dimension of the grid (default is 20).
+    """</span>
+    files <span class="token operator">=</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>image_folder<span class="token punctuation">)</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        files<span class="token punctuation">.</span>sort<span class="token punctuation">(</span>key<span class="token operator">=</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>search<span class="token punctuation">(</span>r<span class="token string">'(\d+)'</span><span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">except</span> ValueError<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Error: Could not parse the numeric part of the filenames."</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span>
+    first_piece <span class="token operator">=</span> Image<span class="token punctuation">.</span><span class="token builtin">open</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>image_folder<span class="token punctuation">,</span> files<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    piece_width<span class="token punctuation">,</span> piece_height <span class="token operator">=</span> first_piece<span class="token punctuation">.</span>size
+    qr_width <span class="token operator">=</span> piece_width <span class="token operator">*</span> grid_size
+    qr_height <span class="token operator">=</span> piece_height <span class="token operator">*</span> grid_size
+    assembled_image <span class="token operator">=</span> Image<span class="token punctuation">.</span>new<span class="token punctuation">(</span><span class="token string">"RGB"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>qr_width<span class="token punctuation">,</span> qr_height<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">for</span> i<span class="token punctuation">,</span> <span class="token builtin">file</span> <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>files<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        piece <span class="token operator">=</span> Image<span class="token punctuation">.</span><span class="token builtin">open</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>image_folder<span class="token punctuation">,</span> <span class="token builtin">file</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        x <span class="token operator">=</span> <span class="token punctuation">(</span>i <span class="token operator">%</span> grid_size<span class="token punctuation">)</span> <span class="token operator">*</span> piece_width
+        y <span class="token operator">=</span> <span class="token punctuation">(</span>i <span class="token operator">//</span> grid_size<span class="token punctuation">)</span> <span class="token operator">*</span> piece_height
+        assembled_image<span class="token punctuation">.</span>paste<span class="token punctuation">(</span>piece<span class="token punctuation">,</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token operator">not</span> output_path<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>endswith<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">'.png'</span><span class="token punctuation">,</span> <span class="token string">'.jpg'</span><span class="token punctuation">,</span> <span class="token string">'.jpeg'</span><span class="token punctuation">,</span> <span class="token string">'.bmp'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        output_path <span class="token operator">+=</span> <span class="token string">'.png'</span>
+    assembled_image<span class="token punctuation">.</span>save<span class="token punctuation">(</span>output_path<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">"QR code assembled and saved at {output_path}"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    image_folder <span class="token operator">=</span> r<span class="token string">"PATH"</span>  <span class="token comment"># Replace with your folder path</span>
+    output_path <span class="token operator">=</span> r<span class="token string">"PATH"</span>  <span class="token comment"># Corrected output path</span>
+    merge_qr_code_pieces<span class="token punctuation">(</span>image_folder<span class="token punctuation">,</span> output_path<span class="token punctuation">)</span>
+</code></pre>
+<h4 id="step-3-scanning-the-qr-code">Step 3: Scanning the QR Code</h4>
+<p>Use a QR code scanner to decode the assembled image. The decoded message contains the flag.</p>
+<h4 id="final-output">Final Output</h4>
+<p>The flag revealed by scanning the QR code is:&nbsp;<br>
+![[Pasted image 20250115101505.png]]</p>
+<pre><code>flag-{sW1cH_t0_L1nUx}
+</code></pre>
+<h4 id="point-deduction-and-hints">Point Deduction And Hints</h4>
+<p>HINT 1: Try to analyse the binwalk content (-5)<br>
+HINT 2: Use aperisolve!!! (-10)<br>
+HINT 3: 400 images = (20x20) ?(-5)<br>
+HINT 4: Final hint : try making a qr code using the images!(-10)</p>
+<h3 id="covered-or-concealed">Covered or Concealed</h3>
+<h4 id="description">Description</h4>
+<p>A beginner level question based on Steganography.</p>
+<h4 id="attached-files">Attached files</h4>
+<ul>
+<li>index.html</li>
+<li>style.css</li>
+</ul>
+<h4 id="summary">Summary</h4>
+<p>Find the hidden string inside the image using Steganography.<br>
+Now, decrypt this Base64 encoded string 7 times to find the flag.</p>
+<h4 id="detailed-solution">Detailed solution</h4>
+<ul>
+<li>
+<p>Inspecting the webpage, you will see three comments which will translate in English to “Decode me 7 times”.</p>
+</li>
+<li>
+<p>Click the Solve Me button which opens an image in a new tab.</p>
+</li>
+<li>
+<p>Decrypt the image by any steganography tool or even an online website and you will get the following string of characters:</p>
+</li>
+</ul>
+<pre><code>Vm0weE5GVXhSWGhYV0doVVlUSlNXVmxyWkZOV1ZteFZWR3RPV0ZKc1ducFdiRkpIVmpKS1IxZHFRbFZpUmtwRVZteFZlRkpXU25KaFJtaG9UV3hLYjFacVFtRlpWa3B6Vkc1T1lWSnRhRlJWYkZaelRURmFjbFZyU214U2EydzBXVEJXYjFkSFNrZFhiR2hXWVd0YVRGcEZXbUZYUlRGWldrWmFUbFp0ZDNwV1JscFhZVEZaZVZOcldrOVdWR3hZV1d4b2IxTkdVblJsUjNSVFZtdGFWbFZ0ZUd0aFZrcHlZMFprVjAxdVFsQmFSRVpoWkVaT2RWSnNTbGRTTTAwMQ==
+</code></pre>
+<ul>
+<li>By the first looks itself, this looks like a Base64 encoded string.</li>
+<li>As the Hint says, by Decoding the above string 7 times you get the flag.</li>
+</ul>
+<h4 id="flag-1">Flag</h4>
+<pre><code>SECURITCTF{N0W_Y0U_KN0W_M7_F4V0UR1T3_NUM83R}
+</code></pre>
+<h4 id="hint-1-see-html-comments">Hint 1: See Html Comments</h4>
+<h4 id="hint-2-the-hint-1s-string-is-in-image">Hint 2: The Hint 1s String is in image</h4>
+<h1 id="reverse-engineering">Reverse Engineering</h1>
+<h3 id="oopsies">OOPSies</h3>
+<h4 id="decompiling-the-.class-file">1. Decompiling the&nbsp;<code>.class</code>&nbsp;File</h4>
+<ol>
+<li>Locate the provided&nbsp;<code>.class</code>&nbsp;file.</li>
+<li>Use any online Java decompiler to convert it back to a&nbsp;<code>.java</code>&nbsp;file.</li>
+</ol>
+<h4 id="analyzing-the-decompiled-code">2. Analyzing the Decompiled Code</h4>
+<ol>
+<li>Open the generated&nbsp;<code>.java</code>&nbsp;file in a text editor or IDE.</li>
+<li>Look for interesting strings, comments, or encoded data.<br>
+You are supposed to get:</li>
+</ol>
+<pre class=" language-java"><code class="prism  language-java">   <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Securit</span> <span class="token punctuation">{</span>
+   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> var0<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Hello from the other side!!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Do you get the reference? no?"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Never mind"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"now that you have reached here, here's your present. unwrap this to find out"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"c2VjdXJpdHtTZWN1cml0WFphMiEzWWI4UXc5UGwwfQ=="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"remember it's a secret between us"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="identifying-base64-encoded-data">3. Identifying Base64-Encoded Data</h4>
+<ol>
+<li>Search for suspicious-looking strings in the code.</li>
+<li>Extract any base64-encoded strings you find.<br>
+"c2VjdXJpdHtTZWN1cml0WFphMiEzWWI4UXc5UGwwfQ== "</li>
+</ol>
+<h4 id="decoding-the-base64-string">4. Decoding the Base64 String</h4>
+<p>Use any online Base64 decoder to get the flag.<br>
+After decoding, you are supposed to get: “securit{SecuritXZa2!3Yb8Qw9Pl0}”</p>
+<h4 id="submitting-the-flag">5. Submitting the flag</h4>
+<p>Flag: securit{SecuritXZa2!3Yb8Qw9Pl0}</p>
+<h3 id="prove-your-worth">Prove Your Worth</h3>
+<h5 id="overview">Overview</h5>
+<p>The provided C++ code prompts the user to enter a password, processes it, and checks if it matches a predefined encrypted key using a specific set of transformations. The main function captures the user input and performs a substring operation to extract the actual password from a given format. The&nbsp;<code>checkPassword</code>&nbsp;function then applies several transformations to the password and compares it to the encrypted key.</p>
+<h5 id="code-breakdown">Code Breakdown</h5>
+<h4 id="main-function"><code>main</code>&nbsp;Function</h4>
+<ol>
+<li><strong>User Input</strong>: The user is asked to enter the vault password.</li>
+<li><strong>Extract Password</strong>: The program expects the input in the format&nbsp;<code>secuRIT{password}</code>, where&nbsp;<code>password</code>&nbsp;is 32 characters long. It extracts the&nbsp;<code>password</code>&nbsp;part using&nbsp;<code>userInput.substr(8, userInput.length() - 9)</code>.</li>
+<li><strong>Password Check</strong>: The extracted password is passed to the&nbsp;<code>checkPassword</code>&nbsp;function.</li>
+<li><strong>Result</strong>: Based on the return value of&nbsp;<code>checkPassword</code>, it prints either “Access granted.” or “Access denied!”.</li>
+</ol>
+<h4 id="checkpassword-function"><code>checkPassword</code>&nbsp;Function</h4>
+<ol>
+<li><strong>Length Check</strong>: Ensures the password is exactly 32 characters long.</li>
+<li><strong>Transformation Steps</strong>:
+<ul>
+<li><strong>Swap Adjacent Characters</strong>: Swaps every pair of adjacent characters.</li>
+<li><strong>Reverse String</strong>: Reverses the entire string.</li>
+<li><strong>Rotate Segments</strong>: Rotates every 4-character segment such that the last character moves to the first position within the segment.</li>
+</ul>
+</li>
+<li><strong>Comparison</strong>: Compares the transformed password to the encrypted key&nbsp;<code>"c4P__n0R4de3T_ls_833_tHsM_1aw4Y5"</code>.</li>
+</ol>
+<h5 id="detailed-transformation-example">Detailed Transformation Example</h5>
+<p>Given a password “abcd1234efgh5678ijkl9012mnop3456”, the transformations would be:</p>
+<ol>
+<li><strong>Initial Password</strong>:&nbsp;<code>abcd1234efgh5678ijkl9012mnop3456</code></li>
+<li><strong>After Swapping Adjacent Characters</strong>:&nbsp;<code>badc2143fehg6587jilk0921onmp4536</code></li>
+<li><strong>After Reversing the String</strong>:&nbsp;<code>6354pmno1290klij7856ghef3412cdab</code></li>
+<li><strong>After Rotating 4-Character Segments</strong>:
+<ul>
+<li>Segment&nbsp;<code>6354</code>&nbsp;becomes&nbsp;<code>4635</code></li>
+<li>Segment&nbsp;<code>pmno</code>&nbsp;becomes&nbsp;<code>opmn</code></li>
+<li>Segment&nbsp;<code>1290</code>&nbsp;becomes&nbsp;<code>0129</code></li>
+<li>Segment&nbsp;<code>klij</code>&nbsp;becomes&nbsp;<code>jkli</code></li>
+<li>Segment&nbsp;<code>7856</code>&nbsp;becomes&nbsp;<code>6785</code></li>
+<li>Segment&nbsp;<code>ghef</code>&nbsp;becomes&nbsp;<code>fghe</code></li>
+<li>Segment&nbsp;<code>3412</code>&nbsp;becomes&nbsp;<code>2341</code></li>
+<li>Segment&nbsp;<code>cdab</code>&nbsp;becomes&nbsp;<code>bcda</code></li>
+<li>Resulting String:&nbsp;<code>4635opmn0129jkli6785fghe2341bcda</code></li>
+</ul>
+</li>
+</ol>
+<p>The transformed password is then compared with the encrypted key. If they match, access is granted.<br>
+To solve the problem, the user has to reverse engineer the encryption and create a program to decrypt the key provided in the source file, which then provides the user with the key which he requires to move forward. The key users get after decryption is ‘5w4YaM_1s_tH3_83sT_l34deR_n0_c4P’ which is to be submitted in the format secuRIT{5w4YaM_1s_tH3_83sT_l34deR_n0_c4P}</p>
+<h5 id="conclusion-2">Conclusion</h5>
+<p>This code presents a challenge due to the specific sequence of transformations required to validate the password. The hint provided in the comment is crucial for understanding the expected input format and the nature of the transformations. This ensures that users must comprehend and correctly implement the transformation steps to match the predefined encrypted key and gain access.</p>
+<h5 id="code-used-to-encrypt">Code used to ENCRYPT:</h5>
+<pre class=" language-cpp"><code class="prism  language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;string&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;algorithm&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+string <span class="token function">encryptKey</span><span class="token punctuation">(</span><span class="token keyword">const</span> string<span class="token operator">&amp;</span> key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>key<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">32</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token function">invalid_argument</span><span class="token punctuation">(</span><span class="token string">"Key must be 32 characters long."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    string encrypted_key <span class="token operator">=</span> key<span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>size_t i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> encrypted_key<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">swap</span><span class="token punctuation">(</span>encrypted_key<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> encrypted_key<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">reverse</span><span class="token punctuation">(</span>encrypted_key<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> encrypted_key<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>size_t k <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> k <span class="token operator">&lt;</span> encrypted_key<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> k <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">rotate</span><span class="token punctuation">(</span>encrypted_key<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> k<span class="token punctuation">,</span> encrypted_key<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> k <span class="token operator">+</span> <span class="token number">3</span><span class="token punctuation">,</span> encrypted_key<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> k <span class="token operator">+</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> encrypted_key<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    string key <span class="token operator">=</span> <span class="token string">"5w4YaM_1s_tH3_83sT_l34deR_n0_c4P"</span><span class="token punctuation">;</span>
+    string encrypted_key <span class="token operator">=</span> <span class="token function">encryptKey</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Encrypted key: "</span> <span class="token operator">&lt;&lt;</span> encrypted_key <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h5 id="code-used-to-decrypt">Code used to DECRYPT:</h5>
+<pre class=" language-cpp"><code class="prism  language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;string&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;algorithm&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token comment">// Function to decrypt the key</span>
+string <span class="token function">decryptKey</span><span class="token punctuation">(</span><span class="token keyword">const</span> string<span class="token operator">&amp;</span> encrypted_key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>encrypted_key<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">32</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token function">invalid_argument</span><span class="token punctuation">(</span><span class="token string">"Encrypted key must be 32 characters long."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    string key <span class="token operator">=</span> encrypted_key<span class="token punctuation">;</span>
+
+    <span class="token comment">// Third pass: Rotate sections of 4 characters to the left by one position (reverse)</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>size_t k <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> k <span class="token operator">&lt;</span> key<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> k <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">rotate</span><span class="token punctuation">(</span>key<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> k<span class="token punctuation">,</span> key<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> k <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> key<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> k <span class="token operator">+</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Second pass: Reverse the entire string back</span>
+    <span class="token function">reverse</span><span class="token punctuation">(</span>key<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> key<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// First pass: Simple swap adjacent characters back</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>size_t i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> key<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">swap</span><span class="token punctuation">(</span>key<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> key<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> key<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    string encrypted_key <span class="token operator">=</span> <span class="token string">"c4P__n0R4de3T_ls_833_tHsM_1aw4Y5"</span><span class="token punctuation">;</span>
+    string decrypted_key <span class="token operator">=</span> <span class="token function">decryptKey</span><span class="token punctuation">(</span>encrypted_key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Decrypted key: "</span> <span class="token operator">&lt;&lt;</span> decrypted_key <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="secret-recipe">Secret Recipe</h3>
+<p>This challenge involves decoding a message hidden within a Chef script. The Chef programming language is designed to make programs look like cooking recipes. This challenge cleverly uses this language to encode a secret message.</p>
+<h4 id="step-1-compiling-and-understanding-the-chef-script">Step 1: Compiling and Understanding the Chef Script</h4>
+<p>The Chef script uses ingredients (variables or data) and a method (operations) to build a string from ASCII values. Compile this script to convert the ASCII values into characters, resulting in a long string of numbers and letters.</p>
+<ul>
+<li>Use&nbsp;<a href="https://esolangpark.vercel.app/ide/chef">https://esolangpark.vercel.app/ide/chef</a>&nbsp;to compile the Chef script.<br>
+![[Pasted image 20250115113937.png]]</li>
+</ul>
+<h4 id="step-2-ascii-decoding">Step 2: ASCII Decoding</h4>
+<p>The output from the Chef compiler is an ASCII-encoded text. Use an ASCII to text decoder to convert this output into a readable string.</p>
+<ul>
+<li>Use&nbsp;<a href="https://codebeautify.org/ascii-to-text">ASCII to Text Decoder</a>&nbsp;to convert ASCII-encoded text to a readable format.<br>
+![[Pasted image 20250115114019.png]]</li>
+</ul>
+<h4 id="step-3-reading-the-message">Step 3: Reading the Message</h4>
+<p>The decoded message instructs to read it in reverse. When reversed, it reveals a Base64 encoded string.</p>
+<h4 id="step-4-base64-decoding">Step 4: Base64 Decoding</h4>
+<p>Decode the Base64 string using CyberChef at&nbsp;<a href="https://gchq.github.io/CyberChef/">https://gchq.github.io/CyberChef/</a>&nbsp;to unveil the final secret message or flag.</p>
+<h4 id="final-output-1">Final Output</h4>
+<p>This flag is the secret ingredient mentioned in the challenge, symbolizing mastery in the culinary (and CTF) arts.</p>
+<h4 id="conclusion-3">Conclusion</h4>
+<p>This challenge demonstrates the use of multiple encoding schemes and the Chef programming language to secure and obfuscate data. It’s a fun and educational way to learn about different aspects of cybersecurity and encoding techniques.</p>
+<h3 id="security-info">Security Info</h3>
+<h1 id="web-exploitation">Web Exploitation</h1>
+<h3 id="the-architects-matrix-conundrum">The Architect’s Matrix Conundrum</h3>
+<h5 id="step-1-peering-behind-the-curtain">Step 1: Peering Behind the Curtain</h5>
+<p>To challenge The Architect, explore the matrix’s source code:</p>
+<ol>
+<li>Right-click the matrix display and choose “View Page Source”</li>
+<li>Examine the underlying HTML and JavaScript</li>
+</ol>
+<h5 id="step-2-uncovering-the-fragments-of-truth">Step 2: Uncovering the Fragments of Truth</h5>
+<p>The message is split into four parts, each concealed using different methods:</p>
+<ol>
+<li>
+<p><strong>Fragment One:</strong>&nbsp;Hidden in plain sight within the HTML</p>
+<ul>
+<li>Look for a div with a class suggesting concealment</li>
+</ul>
+<pre class=" language-html"><code class="prism  language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>hidden-in-plain-sight<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>secuRIT{hack_the<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+</li>
+<li>
+<p><strong>Fragment Two:</strong>&nbsp;Inserted into the core array of the Matrix</p>
+<ul>
+<li>Add to the JavaScript array</li>
+</ul>
+<pre class=" language-js"><code class="prism  language-js">drops<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">"_matrix_"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li>
+<p><strong>Fragment Three:</strong></p>
+<pre class=" language-js"><code class="prism  language-js"><span class="token comment">// Hint: The third part is what you're trying to hack</span>
+     <span class="token keyword">const</span> encodedPart <span class="token operator">=</span> <span class="token function">btoa</span><span class="token punctuation">(</span><span class="token string">"matrix"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li>
+<p><strong>Fragment Four:</strong></p>
+<pre class=" language-js"><code class="prism  language-js"><span class="token keyword">const</span> hiddenChars <span class="token operator">=</span> <span class="token string">"_securIT_style}"</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ol>
+<h5 id="step-3-assembling-the-message">Step 3: Assembling the Message</h5>
+<p>Combine all fragments in the correct sequence:</p>
+<p>The Complete Truth Unveiled Putting it all together, we reveal the message:&nbsp;secuRIT{hack_the_RIT_matrix_securIT_style}</p>
+<h3 id="web-of-deception">Web of Deception</h3>
+<h4 id="step-1-initial-clue">Step 1: Initial Clue</h4>
+<p>Upon visiting the main page, participants are greeted with the text “did anyone say ROBOTS??” and an image named “robots.txt.png”. This hints at checking the <code>/robots.txt</code> file.<br>
+![[Pasted image 20250115121639.png]]</p>
+<h4 id="step-2-following-the-trail">Step 2: Following the Trail</h4>
+<p>The <code>robots.txt</code> file reveals a path to <code>/riddle1.html</code>.</p>
+<h5 id="riddle-1-math-challenge">Riddle 1: Math Challenge</h5>
+<p>Solve the math riddle presented on this page. The answer can be calculated manually or found in the JavaScript source code of the page.<br>
+After solving the first riddle, a button appears that leads to <code>/riddle2.html</code>.<br>
+Ans: 1.72</p>
+<h5 id="riddle-2-physics-question">Riddle 2: Physics Question</h5>
+<p>This page presents a physics question based on projectile motion. Again, solve manually or find the answer in the page’s source code.<br>
+Correctly answering the physics question reveals a button to <code>/riddle3.html</code>.<br>
+Ans: 10.20</p>
+<h5 id="riddle-3-mental-ability">Riddle 3: Mental Ability</h5>
+<p>Answer the basic mental ability question. The solution is also embedded within the page’s JavaScript.<br>
+Ans: 20</p>
+<h4 id="step-3-discovering-the-secret-path">Step 3: Discovering the Secret Path</h4>
+<p>Successfully solving all three riddles reveals a “SECRET PATH” button, which redirects to <code>/secrets.html</code>.</p>
+<h4 id="step-4-decoding-the-final-message">Step 4: Decoding the Final Message</h4>
+<p>The <code>/secrets.html</code> page presents a long binary code. Decode this binary to text to reveal the final flag.</p>
+<pre class=" language-binary"><code class="prism  language-binary">01110011 01100101 01100011 01110101 01010010 01001001 01010100 01111011 01010010 00110001 01100100 01100100 01101100 00110011 01011111 01001101 00110100 00100100 01110100 00110011 01110010 01011111 00110001 00100100 01011111 00110001 01101101 01110000 01110010 00110011 00100100 00100100 01100101 01100100 01111101
+</code></pre>
+<h4 id="final-output-2">Final Output</h4>
+<p>The decoded message is the flag:<br>
+<span>secuRIT{R1ddl3_M4<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mn>3</mn><msub><mi>r</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">t3r_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.79444em; vertical-align: -0.15em;"></span><span class="mord mathnormal">t</span><span class="mord">3</span><span class="mord"><span class="mord mathnormal" style="margin-right: 0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.301108em;"><span class="" style="top: -2.55em; margin-left: -0.02778em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span></span></span></span></span>_1mpr3$$ed}</span></p>
+<p>This flag represents the mastery of solving complex web-based riddles and understanding the deeper layers of web navigation and source code inspection.</p>
+<h4 id="conclusion-4">Conclusion</h4>
+<p>The Web of Deception challenge tests a wide range of skills from logical thinking to technical web navigation prowess, emphasizing the importance of attention to detail in cybersecurity.</p>
+<h3 id="unmask-the-admin">Unmask The Admin</h3>
+<ol>
+<li>Open the login page in a browser and log in with the following credentials:
+<ul>
+<li>Username: <code>admin</code></li>
+<li>Password: <code>supersecret123</code></li>
+</ul>
+</li>
+<li>After login, to access the flag, access the developer tools (<code>F12</code> or <code>Ctrl+Shift+I</code>).</li>
+<li>In the <strong>Application</strong> tab, select Cookies under Storage.</li>
+<li>Set the <code>isAdmin</code> cookie to <code>true</code> and refresh the page. The below JavaScript code will be executed:<pre class=" language-javascript"><code class="prism  language-javascript">document<span class="token punctuation">.</span>cookie <span class="token operator">=</span> <span class="token string">"isAdmin=true"</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li>Refresh the page to access the admin panel.</li>
+<li>The encoded flag will be displayed. Copy the displayed Base64-encoded flag:<pre><code>c2VjdVJJVGN0Znt0aGlzX2lzX2Jhc2U2NF9lbmNvZGVkfQ==
+</code></pre>
+</li>
+<li>Decode the flag using any Base64 decoder or using Python. Example using Python:<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">import</span> base64
+encoded_flag <span class="token operator">=</span> <span class="token string">"c2VjdVJJVGN0Znt0aGlzX2lzX2Jhc2U2NF9lbmNvZGVkfQ=="</span>
+decoded_flag <span class="token operator">=</span> base64<span class="token punctuation">.</span>b64decode<span class="token punctuation">(</span>encoded_flag<span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>decoded_flag<span class="token punctuation">)</span>
+</code></pre>
+</li>
+<li>The decoded flag is:<pre><code>secuRITctf{this_is_base64_encoded}
+</code></pre>
+</li>
+</ol>
+<h5 id="decoded-flag-">Decoded Flag: `</h5>
+<p>secuRITctf{this_is_base64_encoded}</p>
+<h1 id="miscellaneous">Miscellaneous</h1>
+<h3 id="snake-charmer">Snake Charmer</h3>
+<p>IF you couldnt score 30 points in the game, checkout this method:</p>
+<ol>
+<li>
+<p><strong>Inspect the Source Code</strong></p>
+<p>For those with coding knowledge, you can inspect the game’s source code to find hidden information. The flag appears to be encoded within the JavaScript section of the source code.</p>
+</li>
+<li>
+<p><strong>Find the Encoded Flag</strong></p>
+<p>The encoded flag is presented in Base64 format. Example of the encoded flag:&nbsp;<code>c2VjdVJJVHtzbjRrM19jaDRybTNyXzNsaXQzfQ==</code><br>
+![[Pasted image 20250115133842.png]]</p>
+</li>
+</ol>
+<h4 id="decoding-the-flag">Decoding the Flag</h4>
+<p>To decode this, you can use any Base64 decoder. Here are two methods:</p>
+<h5 id="using-python">Using Python</h5>
+<pre class=" language-python"><code class="prism  language-python">
+  <span class="token keyword">import</span> base64
+  <span class="token keyword">print</span><span class="token punctuation">(</span>base64<span class="token punctuation">.</span>b64decode<span class="token punctuation">(</span><span class="token string">"c2VjdVJJVHtzbjRrM19jaDRybTNyXzNsaXQzfQ=="</span><span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  
+</code></pre>
+<h4 id="final-flag">Final Flag</h4>
+<p>After decoding the Base64 string, you will get the final flag:<br>
+secuRIT{sn4k3_ch4rm3r_3lit3}</p>
+<p>By following these steps and utilizing the provided tools, participants can successfully complete the Snake Charmer Challenge and capture the flag. Good luck and happy hunting!</p>
+<h3 id="layers-of-lies">Layers of Lies</h3>
+<h5 id="challenge-description-2">Challenge Description</h5>
+<p>In this challenge, participants are required to extract a hidden flag from an image using steganography and basic encoding techniques. The challenge tests the participants’ ability to use various tools and apply decoding methods to uncover the hidden message.</p>
+<h5 id="steps-to-solve-the-challenge-1">Steps to Solve the Challenge</h5>
+<h6 id="download-the-image">Download the Image</h6>
+<p>First, download the provided image file. This file contains hidden data that needs to be extracted.</p>
+<h6 id="extract-hidden-data-using-steganography-tools">Extract Hidden Data Using Steganography Tools</h6>
+<p>Use steganography tools like&nbsp;<strong>AperiSolve</strong>&nbsp;or&nbsp;<strong>CyberChef</strong>&nbsp;to analyze the image. These tools can help in extracting data hidden using techniques like Least Significant Bit (LSB) encoding.</p>
+<h6 id="analyze-the-image-with-zsteg-in-aperisolve">Analyze the Image with ZSteg in AperiSolve</h6>
+<p>Load the image into&nbsp;<strong>AperiSolve</strong>&nbsp;and navigate to the&nbsp;<strong>ZSteg</strong>&nbsp;section.<br>
+In the ZSteg output, look for LSB data where it mentions the text&nbsp;<code>flag-</code>.</p>
+<p>imagedata … text: “000AAA000”<br>
+b1,r,lsb,xy … text: “n:-5%yuQX`t&lt;”<br>
+b1,rgb,lsb,xy … text: 69:flag-ONSWG5LSNF2GG5DGPN5W4Y3SPFYHI2LPNZPXO2LUNBPWM33SMVXHG2LDON6Q====<br>
+b4,b,msb,xy … file: MPEG ADTS, layer I, v2, 112 kbps, 24 kHz, JntStereo</p>
+<p>Note the encrypted flag following the&nbsp;<code>flag-</code>&nbsp;prefix.</p>
+<h6 id="decrypt-the-encrypted-flag">Decrypt the Encrypted Flag</h6>
+<p>The extracted flag is encrypted using Base32 encoding. Use a Base32 decoder to decrypt the flag.<br>
+Tools like&nbsp;<strong>CyberChef</strong>&nbsp;can be used for this purpose. Select the&nbsp;<strong>From Base32</strong>&nbsp;operation in CyberChef and input the encrypted flag to obtain the decrypted message.</p>
+<h6 id="capture-the-flag">Capture The Flag</h6>
+<p>After decoding, you will get the flag in the following format:</p>
+<p>securitctf{encryption_with_forensics}</p>
+<p>Congratulations! You have successfully captured the flag.</p>
+<h5 id="tools-used-2">Tools Used</h5>
+<ul>
+<li><strong>AperiSolve</strong>: An online tool for steganography analysis that supports multiple steganography techniques, including ZSteg.</li>
+<li><strong>CyberChef</strong>: A versatile web-based tool for performing various encoding, decoding, and data manipulation operations, including Base32 decoding.</li>
+</ul>
+<h2 id="crypto">Crypto</h2>
+<h3 id="ciphered-reflections">Ciphered Reflections</h3>
+<p>write a code or use atbash deciper <a href="https://rumkin.com/tools/cipher/atbash/">websites</a> to decipher the flag.<br>
+atBash input: hvxfIRG{Wvxibk1r0m_T0w}<br>
+Flag: secuRIT{Decryp1i0n_G0d}</p>
+<h3 id="the-secret-handshake">The secret handshake</h3>
+<p>In this challenge, participants are required to implement the Diffie-Hellman key exchange protocol in Python. The goal is to compute the shared secret key between two parties, Alice and Bob, using given values for the prime number&nbsp;<code>p</code>, the base&nbsp;<code>g</code>, and their private keys&nbsp;<code>a</code>&nbsp;and&nbsp;<code>b</code>.</p>
+<h4 id="steps-to-solve-the-challenge-2">Steps to Solve the Challenge</h4>
+<h5 id="step-1-compute-public-values">Step 1: Compute Public Values</h5>
+<p>Each party computes their public value using the formula:</p>
+<pre><code>A = g^a mod p
+</code></pre>
+<pre><code>B = g^b mod p
+</code></pre>
+<p>Where:</p>
+<ul>
+<li><code>p</code>&nbsp;is the prime number</li>
+<li><code>g</code>&nbsp;is the base</li>
+<li><code>a</code>&nbsp;is Alice’s private key</li>
+<li><code>b</code>&nbsp;is Bob’s private key</li>
+</ul>
+<h5 id="step-2-compute-the-shared-secret-key">Step 2: Compute the Shared Secret Key</h5>
+<p>Both parties compute the shared secret key using each other’s public values:</p>
+<pre><code>shared_secret_alice = B^a mod p
+</code></pre>
+<pre><code>shared_secret_bob = A^b mod p
+</code></pre>
+<p>Where:</p>
+<ul>
+<li><code>B</code>&nbsp;is Bob’s public value</li>
+<li><code>A</code>&nbsp;is Alice’s public value</li>
+</ul>
+<h5 id="python-implementation">Python Implementation</h5>
+<p>Below is the Python code to perform the Diffie-Hellman key exchange:</p>
+<pre><code># Given values
+p = 23
+g = 5
+a = 6
+b = 15
+Step 1: Compute public values
+A = pow(g, a, p)
+B = pow(g, b, p)
+Step 2: Compute the shared secret key
+shared_secret_alice = pow(B, a, p)
+shared_secret_bob = pow(A, b, p)
+Verify both computed shared secret keys are equal
+</code></pre>
+<h5 id="output">Output</h5>
+<p>When the above Python code is executed, it will produce the following output:</p>
+<pre><code>Alice's public value (A): 8
+Bob's public value (B): 19
+Shared secret key computed by Alice: 2
+Shared secret key computed by Bob: 2
+Shared keys match: True
+</code></pre>
+<h4 id="conclusion-5">Conclusion</h4>
+<p>By following these steps, participants can successfully implement the Diffie-Hellman key exchange protocol and verify that both parties compute the same shared secret key. This challenge demonstrates the basics of cryptographic key exchange using mathematical principles.</p>
+<h4 id="final-flag-1">Final Flag</h4>
+<p>The Final Flag is secuRIT{2}</p>
+<h3 id="multibase">Multibase</h3>
+<h4 id="challenge-description-3">Challenge Description</h4>
+<p>In this challenge, participants are provided with two encoded strings. The task is to decode the first string multiple times to reveal a key, which will then be used to decode the second string using the Vigenère cipher to uncover the actual flag.</p>
+<h4 id="given-data">Given Data</h4>
+<ol>
+<li>Vm1wR1lXRXdOVWhWYTJoVVYwaENWbGxYZEV0WGJGSlZVbXQwYTJKSFVucFpWVll3WVZaR1ZVMUVhejA9</li>
+<li>spoijbmjxw{!hKET3Ag575MNW!hWPArQJWKdUSNR7O7sQAsG0Gl@vKl}</li>
+</ol>
+<h4 id="procedure">Procedure</h4>
+<h5 id="step-1-multi-layer-decoding">Step 1: Multi-layer Decoding</h5>
+<p>The first string&nbsp;<code>Vm1wR1lXRXdOVWhWYTJoVVYwaENWbGxYZEV0WGJGSlZVbXQwYTJKSFVucFpWVll3WVZaR1ZVMUVhejA9</code>&nbsp;needs to be decoded multiple times using Base64 decoding.</p>
+<p>Decoding the string multiple times reveals the key:&nbsp;<code>almost_there</code>.</p>
+<h5 id="step-2-using-the-key-for-vigenère-cipher">Step 2: Using the Key for Vigenère Cipher</h5>
+<p>The second string&nbsp;<code>spoijbmjxw{!hKET3Ag575MNW!hWPArQJWKdUSNR7O7sQAsG0Gl@vKl}</code>&nbsp;needs to be decoded using the Vigenère cipher with the key obtained from Step 1.</p>
+<p>Decoding the second string with the key&nbsp;<code>almost_there</code>&nbsp;reveals the actual flag:&nbsp;<code>securitctf{!dKTH3Mo575TUP!dFLAgEVERkNOWN7O7hEMaN0Ne@rTh}</code>.</p>
+<h4 id="tools-used-3">Tools Used</h4>
+<ul>
+<li><strong>Base64 Decoder</strong>: An online tool or Python script to decode the Base64 encoded string multiple times.</li>
+<li><strong>Vigenère Cipher Decoder</strong>: An online tool or Python script to decode the Vigenère cipher text using the obtained key.</li>
+<li>
+<h4 id="conclusion-6">Conclusion</h4>
+</li>
+</ul>
+<p>By following these steps, participants can successfully decode the given strings to reveal the hidden flag. This challenge demonstrates the use of multi-layer decoding and the application of the Vigenère cipher. Good luck and happy decoding!</p>
+<h3 id="a-twisted-message">A Twisted Message</h3>
+<p>Use an Encoder Decoder website such as <em>cryptii</em><br>
+Use ROT13 method and put the given cipher text and get the flag which is securitctf{you_are_doing_good!_all_the_best}</p>
+<h3 id="give-it-a-cipher">Give it a Cipher</h3>
+<p>In this problem, we first encounter hash values, and we can crack these hash values&nbsp;<a href="https://crackstation.net/">here</a>.Now that we have the original message, which says:<br>
+“Have you ever heard about RSA”</p>
+<p>This means the next message is encrypted using the RSA algorithm, and we need a private key to decrypt the encrypted message. For this, we use this&nbsp;<a href="https://www.devglan.com/online-tools/rsa-encryption-decryption">website</a>&nbsp;and get the flag.</p>
+<h4 id="flag-securitrsa_with_sha_is_easy">Flag: secuRIT{RSA_with_SHA_is_easy}</h4>
+<h1 id="forensic">Forensic</h1>
+<h3 id="the-hidden-signature">The Hidden Signature</h3>
+<h4 id="given">Given:</h4>
+<p>We have received an image that seems to be corrupted. Can you fix the image and reveal the hidden message?</p>
+<h4 id="challenge-description-4">Challenge Description</h4>
+<p>In this challenge, we are given a corrupted jpeg image which on trying to open, fails to display properly or seems to corrupted. Our goal is to use a hex editor to inspect the first few bytes of the file and locate the incorrect to values in the file’s header and replace them with the proper JPEG magic number. This process will fix the file and enable us to view the image correctly.</p>
+<h4 id="procedure-1">Procedure</h4>
+<h4 id="step-1-unzip-the-file">Step 1: UnZip the file</h4>
+<p>After unzipping the file, you will now have a jpeg file which says “format is unsupported or file is corrupted”.</p>
+<h4 id="step-2-get-the-jpeg-file-signature-magic-number">Step 2: Get the JPEG File Signature (Magic Number)</h4>
+<p>Get the File Signature which for jpeg raw file is FF D8 FF E0.&nbsp;<br>
+![[Pasted image 20250115151918.png]]</p>
+<h4 id="step-3-open-hex-editor">Step 3: Open Hex Editor</h4>
+<p>After opening the software, locate the unzipped image on the computer and open it in Hex Editor.</p>
+<h4 id="step-4-replace-the-bits">Step 4: Replace the Bits</h4>
+<p>Replace the first six bits of the file with the Magic Number found.<br>
+![[Pasted image 20250115151947.png]]</p>
+<h4 id="step-5-reopen-the-image">Step 5: Reopen the Image</h4>
+<p>Save the changes, and reopen the image. The image should now display the flag.</p>
+<h4 id="end-result">End Result:</h4>
+<p>![[Pasted image 20250115152052.png]]</p>
+<h4 id="conclusion-7">Conclusion:</h4>
+<p>In this challenge, we successfully repaired a corrupted JPEG image by identifying and correcting the incorrect header values using a hex editor. By replacing the erroneous bytes with the correct JPEG magic number, we restored the image and revealed the hidden message. This exercise demonstrates the importance of understanding file signatures and the structure of different file formats.</p>
+<h4 id="flag-securityou_are_genius">Flag: secuRIT{you_are_genius}</h4>
+<h3 id="i-love-it">I Love It</h3>
+<h4 id="challenge-description-5">Challenge Description</h4>
+<p>In this challenge, participants are given an MP3 file named&nbsp;<strong>i_love_it.mp3</strong>. At the end of the MP3 file, there is an odd beeping noise which participants should identify as Morse code. The task is to convert this Morse code into text to reveal the flag.</p>
+<h4 id="steps-to-solve-the-challenge-3">Steps to Solve the Challenge</h4>
+<h5 id="step-1-listen-to-the-audio">Step 1: Listen to the Audio</h5>
+<p>Play the provided MP3 file&nbsp;<strong>i_love_it.mp3</strong>&nbsp;and listen carefully. At the end of the audio, you will hear a series of beeping noises.</p>
+<h5 id="step-2-identify-the-morse-code">Step 2: Identify the Morse Code</h5>
+<p>Recognize that the beeping noise is actually Morse code. The pattern of beeps and pauses corresponds to Morse code signals.</p>
+<h5 id="step-3-convert-morse-code-to-text">Step 3: Convert Morse Code to Text</h5>
+<p>Use an online service that converts audio Morse code to text. You can find various tools available online by searching for “audio Morse code to text converter”.</p>
+<p>Upload the MP3 file to the selected service and let it process the audio. The service will convert the Morse code to the following text:</p>
+<pre><code>secuRIT b33p b00p b33p
+</code></pre>
+<h5 id="step-4-format-the-flag">Step 4: Format the Flag</h5>
+<p>Format the extracted text into the correct flag format. The flag should be in the format&nbsp;<code>secuRIT{b33p_b00p_b33p}</code>. Therefore, the final flag is:</p>
+<pre><code>secuRIT{b33p_b00p_b33p}
+</code></pre>
+<h4 id="tools-used-4">Tools Used</h4>
+<ul>
+<li><strong>Audio Morse Code to Text Converter</strong>: An online service that converts audio Morse code signals to text. Various tools can be found by searching online.</li>
+</ul>
+<h4 id="conclusion-8">Conclusion</h4>
+<p>By following these steps and using the provided hints, participants can successfully decode the Morse code at the end of the audio file to reveal the flag. This challenge demonstrates the use of Morse code for encoding messages within audio files. Good luck and happy hunting!</p>
+<h3 id="breaking-rsa">Breaking RSA</h3>
+<p>Test Your Solution (Python)</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">from</span> sympy <span class="token keyword">import</span> mod_inverse
+</code></pre>
+<h4 id="given-values">Given values</h4>
+<p>n = 3233<br>
+e = 17<br>
+ciphertext = 2201</p>
+<h4 id="step-1-find-p-and-q-since-n--p--q">Step 1: Find p and q (since n = p * q)</h4>
+<p>p = 61<br>
+q = 53</p>
+<h4 id="step-2-compute-φn">Step 2: Compute φ(n)</h4>
+<p>phi_n = (p - 1) * (q - 1)</p>
+<h4 id="step-3-compute-the-modular-inverse-of-e">Step 3: Compute the modular inverse of e</h4>
+<p>d = mod_inverse(e, phi_n)</p>
+<h4 id="step-4-decrypt-the-ciphertext">Step 4: Decrypt the ciphertext</h4>
+<p>plaintext = pow(ciphertext, d, n)</p>
+<p><strong>print(f"Decrypted message: {plaintext}")</strong></p>
+<h5 id="conclusion-9">Conclusion</h5>
+<p>By following these steps and using AperiSolve, participants can successfully uncover the hidden flag within the image. This challenge demonstrates the use of steganography techniques to hide and extract information. Good luck and happy hunting!</p>
+<h4 id="flag-2">Flag</h4>
+<p>Final Flag is secuRIT{2825}</p>
+<h3 id="time-traveller">Time Traveller</h3>
+<p>Use <em>Wayback Machine</em> - An Internet archive!<br>
+Put the website with proper year, month and date<br>
+Find the flag which is securitctf{webmaster@wipro.com}</p>
+<h1 id="theme-based">Theme based</h1>
+<h3 id="harry-potter">Harry Potter</h3>
+<p>First Flag: secuRIT{Y0u_Are_1HE_CH0sEn_ONe} -&gt; base64 encoded (c2VjdVJJVHtZMHVfQXJlXzFIRV9DSDBzRW5fT05lfQ==)</p>
+<p>Secound Question :- Which tool is being mentioned? -&gt; Ans: Wireshark<br>
+Secound Flag: Who sent the message? (Keep it in the format secuRIT{} For eg: secuRIT{Ron}  ) -&gt; Flag: secuRIT{darkl0rd}</p>
+<p>Third Question :- Who is the new teacher in hogwarts? -&gt; Ans: cookie_monster<br>
+Third Flag: secuRIT{C00kies_CaN_B3_Dang3rous!}<br>
+Hint: For knowing anyone truely, you need to know their background very well right?<br>
+Hint: Once you are on path IncrementinG is the your way out<br>
+Hint: When we are on right path then we should belive on our gut feelings</p>
+<p>Fourth Question :- Whats the vulnerability you are using here (ALL Caps) -&gt; IDOR<br>
+Fourth Flag :- secuRIT{IDOR_S33mS_T0_B3_E4Sy}<br>
+Hint :- I think out professor is too lazy to change the creds :(<br>
+Hint :- sorry my english is bad, but my ID OR number would be integer right?<br>
+Hint :- Can you access any other fan mails?</p>
+<p>Fifth Flag :- Whats the username? -&gt; Ans darklord<br>
+Fifth Flag :- secuRIT{h0rcrux_D3stR0y3d!}<br>
+Hint :- The key to the vault lies within the password… but only for those who know the right spell. But when you dont have the key then what would you do?<br>
+Hint :- Are you scared of injections? Cause I am :(<br>
+Hint :- Try to provide spaces in the payload if you know what you doing ;)</p>
+<h3 id="money-heist">Money Heist:</h3>
+<h3 id="a-heist-in-layers">A Heist in Layers</h3>
+<p>This walkthrough will guide you through solving each puzzle and uncovering the password to unlock&nbsp;<code>goal.zip</code>. Let’s dive in!</p>
+<h4 id="shortcut">Shortcut:</h4>
+<p>the Instructions.txt gives a huge hint about&nbsp;<code>passwords_list.txt</code>&nbsp;in the Note section of the file it says :</p>
+<pre><code>- People who are lazy to solve puzzles i have given you a list of around 30,000 possible passwords.
+- Best of luck for finding the oil drop hidden in ocean of water droplets.
+</code></pre>
+<p>Which shows that there is only one unique password in&nbsp;<code>passwords_list.txt</code>&nbsp;which can be obtained by executing the follwoing command:&nbsp;<code>sort passwords_list.txt | uniq -u</code></p>
+<h4 id="puzzle-1-the-vault-code">Puzzle 1: The Vault Code</h4>
+<h5 id="problem">Problem:</h5>
+<p>A 6-digit code where:</p>
+<ol>
+<li>The sum of the digits is 21.</li>
+<li>All digits are distinct.</li>
+<li>Digits are arranged in ascending order.</li>
+</ol>
+<h5 id="solution-1">Solution:</h5>
+<ul>
+<li>List all combinations of distinct digits (0–9) that sum to 21.</li>
+<li>The valid combination:&nbsp;<strong>1, 2, 3, 4, 5, 6</strong>&nbsp;(Sum = 21).</li>
+<li>Arrange in increasing order:&nbsp;<strong>123456</strong>.</li>
+</ul>
+<p><strong>X1 = 123456</strong></p>
+<h4 id="puzzle-2-the-alarm-code">Puzzle 2: The Alarm Code</h4>
+<h5 id="problem-1">Problem:</h5>
+<p>A cryptic poem hints at a code. The solution is the first alphabet of each line of the poem with words separated by underscores.</p>
+<h5 id="solution-2">Solution:</h5>
+<p>The key phrase builds up as :<br>
+<strong>“TIME TO ROB”</strong></p>
+<p>Format with underscores:&nbsp;<strong>TIME_TO_ROB</strong></p>
+<p><strong>X2 = TIME_TO_ROB</strong></p>
+<h5 id="puzzle-3-tokyo’s-hidden-escape">Puzzle 3: Tokyo’s Hidden Escape</h5>
+<h5 id="problem-2">Problem:</h5>
+<p>Find the hidden phrase in the Lorem Ipsum text.</p>
+<h5 id="solution-3">Solution:</h5>
+<ul>
+<li>Spot the reversed phrase in the text:&nbsp;<strong>“(KNAB_EHT)”</strong>.</li>
+<li>Reverse it back:&nbsp;<strong>“THE_BANK”</strong>.</li>
+</ul>
+<p><strong>X3 = THE_BANK</strong></p>
+<h4 id="puzzle-4-the-final-puzzle">Puzzle 4: The Final Puzzle</h4>
+<h5 id="problem-3">Problem:</h5>
+<p>Find the sum of factorials of numbers from 1 to 5.</p>
+<h5 id="solution-4">Solution:</h5>
+<p>Factorials:</p>
+<ul>
+<li>1! = 1</li>
+<li>2! = 2</li>
+<li>3! = 6</li>
+<li>4! = 24</li>
+<li>5! = 120<br>
+Sum = 1 + 2 + 6 + 24 + 120 =&nbsp;<strong>153</strong></li>
+</ul>
+<p><strong>X4 = 153</strong></p>
+<h4 id="puzzle-5-the-security-lockdown">Puzzle 5: The Security Lockdown</h4>
+<h5 id="problem-4">Problem:</h5>
+<p>Decrypt the Caesar cipher: “wkh khlvw ehjlqv”.<br>
+Shift letters backward by 3.</p>
+<h5 id="solution-5">Solution:</h5>
+<ul>
+<li>Decoded text:&nbsp;<strong>“THE HEIST BEGINS”</strong>.</li>
+<li>Format with underscores and capitalize:&nbsp;<strong>THE_HEIST_BEGINS</strong>.</li>
+</ul>
+<p><strong>X5 = THE_HEIST_BEGINS</strong></p>
+<h4 id="puzzle-6-the-maze-of-directions">Puzzle 6: The Maze of Directions</h4>
+<h5 id="problem-5">Problem:</h5>
+<p>Calculate the shortest distance from the final position to the origin (0, 0) using the given movements.</p>
+<h5 id="solution-6">Solution:</h5>
+<p>Final coordinates:</p>
+<ul>
+<li>North-South: 5 - 6 + 7 - 2 =&nbsp;<strong>4</strong></li>
+<li>East-West: 3 - 4 + 8 - 5 =&nbsp;<strong>2</strong></li>
+</ul>
+<p>Shortest distance = √(4² + 2²) = √20.<br>
+P = 20.</p>
+<p><strong>X6 = 20</strong></p>
+<h4 id="puzzle-7-the-treasure">Puzzle 7: The Treasure</h4>
+<h5 id="problem-6">Problem:</h5>
+<p>Find the largest prime number less than the prize pool of HackRITual.</p>
+<h5 id="solution-7">Solution:</h5>
+<p>Assume the prize pool =&nbsp;<strong>10,000</strong>&nbsp;(example value).<br>
+Largest prime less than 10,000:&nbsp;<strong>9973</strong>.</p>
+<p><strong>X7 = 9973</strong></p>
+<h4 id="final-password">Final Password</h4>
+<p>Combine all fragments with underscores:<br>
+<code>X1_X2_X3_X4_X5_X6_X7</code></p>
+<p><strong>Password = 123456_TIME_TO_ROB_THE_BANK_153_THE_HEIST_BEGINS_20_9973</strong></p>
+<p>Use this password to unzip&nbsp;<code>goal.zip</code>&nbsp;and reveal the final goal. After unzipping you will find a goal.txt in the directory upon opening it you will find the flag like below:</p>
+<h4 id="flag-3">Flag</h4>
+<p>goal.txt be accessible after unzipping. open the file.</p>
+<h5 id="flag-securitth3_profess0r_w0uld_b3_pr0ud">FLAG: secuRIT{Th3_Profess0r_w0uld_b3_pr0ud!}</h5>
+<h3 id="in-the-memories">In the memories</h3>
+<p>Welcome to the solution walkthrough of the&nbsp;<strong>Vanishing File Heist</strong>. In this challenge, you were tasked with recovering a deleted file from a bank’s fragmented memory system. It required keen attention to file structures, searching techniques, and using&nbsp;<strong>strings and grep</strong>&nbsp;to locate the FLAG hidden in the depths of the system.</p>
+<h4 id="step-1-starting-the-challenge"><strong>Step 1: Starting the Challenge</strong></h4>
+<p>When you first begin, navigate to the&nbsp;<code>In_The_Memories</code>&nbsp;directory, where the bank’s entire system structure is hidden. This will be your starting point. Use the&nbsp;<code>cd</code>&nbsp;command to get into the base directory:</p>
+<pre class=" language-shell"><code class="prism  language-shell">cd In_The_Memories
+</code></pre>
+<h4 id="step-2-finding-the-right-path"><strong>Step 2: Finding the Right Path</strong></h4>
+<pre class=" language-shell"><code class="prism  language-shell">cd bank_system
+</code></pre>
+<p>In the&nbsp;<code>bank_system</code>&nbsp;directory, there are many files that appear irrelevant. These include random logs and binary files.&nbsp;<strong>Do not focus on these just yet</strong>—they are distractions.</p>
+<p>The clue is hidden in a file called&nbsp;<code>hint.txt</code>. This file gives a clear indication that you need to follow a path leading to&nbsp;<strong>/docs/file_3.txt</strong>.</p>
+<pre class=" language-shell"><code class="prism  language-shell">cat hint.txt
+</code></pre>
+<p>This will reveal a hint like:</p>
+<pre><code>cd docs 
+cat file1.txt || file3.txt || file9.txt
+</code></pre>
+<h4 id="step-3-navigating-the-docs"><strong>Step 3: Navigating the Docs</strong></h4>
+<p>Your next step is to enter the&nbsp;<code>docs</code>&nbsp;directory, which contains the text files . Here’s how to access it:</p>
+<pre class=" language-shell"><code class="prism  language-shell">cd docs
+</code></pre>
+<p>and acc to the hint you should go through the file_1, file_3 and file_5. when you read file_3.txt using the following command:</p>
+<pre><code>cat file_3.txt
+</code></pre>
+<p>it reveals the next location you need to go to:</p>
+<pre><code>The first key lies in 'transactions'. Check :
+txn_4.log,
+txn_5.log,
+txn_7.log for the next hint.
+</code></pre>
+<p>This shows our next location&nbsp;<code>transactions</code>&nbsp;directory.</p>
+<h4 id="step-4-navigating-the-transactions"><strong>Step 4: Navigating the Transactions</strong></h4>
+<p>In Transactions try reading each of the txn_4.log, txn_5.log, txn_7.log While reading txn_7.log we will wind our next clue:</p>
+<pre class=" language-shell"><code class="prism  language-shell">cd ..
+cd transactions
+cat txn_7.log
+</code></pre>
+<p>this will reveal our next target location where we will find our next hint:</p>
+<pre><code>You’re getting closer! Look in 'security'. The key lies in either 
+sec_2.cfg
+sec_4.cfg
+sec_6.cfg
+sec_8.cfg
+</code></pre>
+<p>So we get our next location which is securit</p>
+<h4 id="step-5-navigating-the-security"><strong>Step 5: Navigating the Security</strong></h4>
+<p>Go to the security directory and read through the required files.</p>
+<pre class=" language-shell"><code class="prism  language-shell">cd ..
+cd security
+cat sec_4.cgf
+</code></pre>
+<p>while reading sec_4.cfg we find our next clue:</p>
+<pre><code>The trail leads to 'reports'. Seek the answer in 
+report_9.csv
+report_8.csv
+report_5.csv
+report_4.csv
+report_2.csv
+</code></pre>
+<p>The hunt for the flag is nealry half done. Reports will hold our next instructions.</p>
+<h4 id="step-6-navigating-the-reports"><strong>Step 6: Navigating the Reports</strong></h4>
+<p>Navigate to reports directory and read through the required files.</p>
+<pre class=" language-shell"><code class="prism  language-shell">cd ..
+cd reports
+cat report_2.csv
+</code></pre>
+<p>while reading report_2.csv we find:</p>
+<pre><code>Almost there! The final step is hidden in 'software/memory_dump'.
+</code></pre>
+<h4 id="step-7-navigating-the-memory-dump"><strong>Step 7: Navigating the Memory Dump</strong></h4>
+<p>Your next step is to enter the&nbsp;<code>memory_dump</code>&nbsp;directory, which contains the fragmented data of deleted files. Here’s how to access it:</p>
+<pre class=" language-shell"><code class="prism  language-shell">cd ..
+cd software/memory_dump
+</code></pre>
+<p>Now, you’ll notice multiple files here. Some contain meaningless data, but others hide critical information.</p>
+<p><strong>Important:</strong>&nbsp;The key lies in one specific file that contains the&nbsp;<strong>FLAG</strong>—but it’s hidden among all the junk. You need to search through all files for strings that might reveal it.</p>
+<p>You will also notice a hint3.txt file</p>
+<pre><code>cat hint3.txt
+</code></pre>
+<p>this will give us a really bug clue :</p>
+<pre><code>all the deleted files and Docs will be dumped here
+tools to consider: strings * 
+</code></pre>
+<h4 id="step-8-using-strings-and-grep-to-find-the-flag"><strong>Step 8: Using&nbsp;<code>strings</code>&nbsp;and&nbsp;<code>grep</code>&nbsp;to Find the FLAG</strong></h4>
+<p>To locate the FLAG, use the&nbsp;<code>strings</code>&nbsp;command to extract printable strings from all the binary files in the&nbsp;<code>memory_dump</code>&nbsp;folder. You’ll pipe this output into&nbsp;<code>grep</code>&nbsp;to search for the flag. Or you can just extract all the strings as well both will work just fine</p>
+<p>Run this command only after entering the memory dump directory:</p>
+<pre class=" language-shell"><code class="prism  language-shell">strings *
+strings * | grep "FLAG"
+</code></pre>
+<p>this will reveal the flag :</p>
+<pre><code>bank_system/software/memory_dump$ strings *                                                                                                                                 all the deleted files and Docs will be dumped here                                                                                                                                                                                           tools to consider: strings *                                                                                                                                                                                                                 RandomMemoryData19289                                                                                                                                                                                                                        RandomMemoryData20430                                                                                                                                                                                                                        Random string ...Lots of such random strings and finally we reach the required                                                                                                                                                                                                                            Random string 14955                                                                                                                                                                                                                          Random string 24411                                                                                                                                                                                                                          Random string 20253                                                                                                                                                                                                                          Random string                                                                                                                                                Random data    flag                                                                                                                                                        secuRIT{D3L3T3D_#BUT_1S_N0T_4G0NE__TH3_PR0F3SS0R_W4TCH3S_&amp;_H34RS_3V3RYTH1NG}                                                                                                                                                                 More random data                                                                                                                                                                                                                             Random string 15975                                                                                                                                                                                                                          Random string                                                                                                                                                Random string 8267                                                                                                                                                                                                                           RandomMemoryData1623                                                                                                                                                                                                                                                                                                                                                                        Random string 11113                                                                                                                                                                                                                          Random string 20372                                                                                                                                                                                                                          Random string 29212   and so on............
+</code></pre>
+<p>This is the output when we search for all the strings in the directory</p>
+<pre><code>strings * | grep "FLAG"
+FLAG{D3L3T3D_#BUT_1S_N0T_4G0NE__TH3_PR0F3SS0R_W4TCH3S_&amp;_H34RS_3V3RYTH1NG}
+</code></pre>
+<p>And this is the flag which is displayed directly when grep is used.</p>
+<h4 id="flag-4">FLAG:</h4>
+<p>secuRIT{D3L3T3D_#BUT_1S_N0T_4G0NE__TH3_PR0F3SS0R_W4TCH3S_&amp;_H34RS_3V3RYTH1NG}</p>
+<h3 id="the-heist-unflods">The Heist Unflods</h3>
+<h4 id="overview-1"><strong>Overview</strong></h4>
+<p>This challenge is part of the Money Heist-themed CTF where participants uncover hidden clues across interconnected web pages to recover flag parts and unlock subsequent challenges. The full flag is:</p>
+<p><code>secuRIT{h4ckRITu4al_H31st_1n_Progress}</code></p>
+<p>Here, we explain step-by-step solutions for uncovering flag parts and solving the puzzles embedded within the Security Cameras challenge.</p>
+<h4 id="challenge-1-retrieving-flag_part1"><strong>Challenge 1: Retrieving</strong>&nbsp;<code>flag_part1</code></h4>
+<h5 id="context"><strong>Context</strong></h5>
+<ul>
+<li>The first camera feed (<code>cam1.png</code>) contains hidden metadata that reveals&nbsp;<code>flag_part1</code>.</li>
+</ul>
+<h5 id="solution-8"><strong>Solution</strong></h5>
+<ol>
+<li>
+<p><strong>Identify Metadata Clues:</strong></p>
+<ul>
+<li>Use a tool like&nbsp;<code>exiftool</code>&nbsp;to inspect the metadata of&nbsp;<code>cam1.png</code>.</li>
+</ul>
+<pre class=" language-shell"><code class="prism  language-shell">exiftool cam1.png
+</code></pre>
+</li>
+<li>
+<p><strong>Extract the Metadata:</strong></p>
+<ul>
+<li>
+<p>Look for the&nbsp;<code>Comment</code>&nbsp;field, which contains:</p>
+<pre><code>Comment: flag_part1: secuRIT{h4ck
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Answer:</strong></p>
+<ul>
+<li><code>flag_part1</code>&nbsp;=&nbsp;<code>secuRIT{h4ck</code></li>
+</ul>
+</li>
+</ol>
+<h4 id="aperisolve">AperiSolve</h4>
+<p>![[Pasted image 20250115163052.png]]</p>
+<h4 id="challenge-2-retrieving-flag_part2"><strong>Challenge 2: Retrieving</strong>&nbsp;<code>flag_part2</code></h4>
+<h5 id="context-1"><strong>Context</strong></h5>
+<ul>
+<li>The second camera feed image (<code>cam2_route_to_[flag_part2].png</code>) hints at a dynamic binary puzzle located at&nbsp;<code>/secret_cameras/flag_part2</code>.</li>
+</ul>
+<h5 id="solution-9"><strong>Solution</strong></h5>
+<ol>
+<li>
+<p><strong>Access the Puzzle Page:</strong></p>
+<ul>
+<li>Navigate to&nbsp;<code>/secret_cameras/flag_part2</code>&nbsp;on the web app.</li>
+</ul>
+</li>
+<li>
+<p><strong>Solve the Binary Puzzle:</strong></p>
+<ul>
+<li>Flip the binary cells in the interactive grid to form the binary number&nbsp;<code>10101101</code>.</li>
+<li>Submit the solution to reveal the next part of the flag and an additional clue for the next challenge.</li>
+</ul>
+</li>
+<li>
+<p><strong>Output:</strong></p>
+<ul>
+<li>
+<p>Upon correct submission, the alert box reveals:</p>
+<pre><code>Success! Flag Part 2: _R1Tu4l_
+
+Secret Quest: Solve the equation in Camera 2 feed to get the route to the next challenge!
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Answer:</strong></p>
+<ul>
+<li><code>flag_part2</code>&nbsp;=&nbsp;<code>_R1Tu4l_</code></li>
+</ul>
+</li>
+</ol>
+<h4 id="challenge-3-retrieving-flag_part3"><strong>Challenge 3: Retrieving</strong>&nbsp;<code>flag_part3</code></h4>
+<h5 id="context-2"><strong>Context</strong></h5>
+<ul>
+<li>The third camera feed (<code>cam3.jpg</code>) contains semi-transparent text revealing&nbsp;<code>flag_part3</code>.</li>
+</ul>
+<h5 id="solution-10"><strong>Solution</strong></h5>
+<ol>
+<li>
+<p><strong>Enhance Visibility:</strong></p>
+<ul>
+<li>Use an image manipulation tool like ImageMagick to analyze the image and enhance visibility of the hidden text.</li>
+</ul>
+<pre class=" language-shell"><code class="prism  language-shell">sudo apt update
+sudo apt install imagemagick
+convert cam3.jpg -pointsize 72 -fill "rgba(255,255,255,0.5)" -gravity center -annotate +0+0 "flag_part3: H31st_" cam3_with_semi_transparent_text.jpg
+</code></pre>
+</li>
+<li>
+<p><strong>Extract the Flag:</strong></p>
+<ul>
+<li>The annotation reveals&nbsp;<code>flag_part3: H31st_</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Answer:</strong></p>
+<ul>
+<li><code>flag_part3</code>&nbsp;=&nbsp;<code>H31st_</code></li>
+</ul>
+</li>
+</ol>
+<h4 id="aperisolve-1">AperiSolve</h4>
+<p>![[Pasted image 20250115163231.png]]</p>
+<h4 id="challenge-4-retrievingflag_part4"><strong>Challenge 4: Retrieving</strong><code>flag_part4</code></h4>
+<h5 id="context-3"><strong>Context</strong></h5>
+<ul>
+<li>The fourth camera feed (<code>cam4.jpg</code>) contains an embedded file using steganography.</li>
+</ul>
+<h5 id="solution-11"><strong>Solution</strong></h5>
+<ol>
+<li>
+<p><strong>Extract the Embedded File:</strong></p>
+<ul>
+<li>Use&nbsp;<code>steghide</code>&nbsp;to extract the hidden file&nbsp;<code>flag_part_4.txt</code>.</li>
+</ul>
+<pre class=" language-shell"><code class="prism  language-shell">steghide extract -sf cam4.jpg
+</code></pre>
+<ul>
+<li>When prompted for a password, leave it blank or use the given clue.</li>
+</ul>
+</li>
+<li>
+<p><strong>Read the File:</strong></p>
+<ul>
+<li>
+<p>The extracted file reveals:</p>
+<pre><code>flag_part4: _1n_Progress}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Answer:</strong></p>
+<ul>
+<li><code>flag_part4</code>&nbsp;=&nbsp;<code>_1n_Progress}</code></li>
+</ul>
+</li>
+</ol>
+<h4 id="aperisolve-2">AperiSolve</h4>
+<p>![[Pasted image 20250115163310.png]]</p>
+<h4 id="full-flag"><strong>Full Flag</strong></h4>
+<p>Combine all parts to reconstruct the full flag:</p>
+<pre><code>flag_part1: secuRIT{h4ck
+flag_part2: _R1Tu4l_
+flag_part3: H31st_
+flag_part4: _1n_Progress}
+</code></pre>
+<h4 id="complete-flag">Complete Flag:</h4>
+<p><strong>secuRIT{h4ckRITu4l_H31st_1n_Progress}</strong></p>
+<h4 id="secret-quest-solving-the-equation"><strong>Secret Quest: Solving the Equation</strong></h4>
+<h4 id="context-4"><strong>Context</strong></h4>
+<ul>
+<li>Camera 2’s feed hints at solving an equation to unlock the route to the next medium-difficulty challenge.</li>
+</ul>
+<h5 id="solution-12"><strong>Solution</strong></h5>
+<ol>
+<li>
+<p><strong>Equation Analysis:</strong></p>
+<ul>
+<li>The equation hinted at in the feed simplifies to coordinates or clues for&nbsp;<code>/secret_cameras/TheProfessorsCommunications</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Solve the Equation:</strong></p>
+<ul>
+<li>Example equation:&nbsp;<code>x + y = z</code></li>
+<li>Solve using provided parameters or clues.</li>
+</ul>
+</li>
+<li>
+<p><strong>Unlock the Route:</strong></p>
+<ul>
+<li>
+<p>Correct solution reveals:</p>
+<pre><code>Route to next challenge: /secret_cameras/TheProfessorsCommunications
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="tools-and-commands-recap"><strong>Tools and Commands Recap</strong></h4>
+<ul>
+<li><strong>Steg Analysis:</strong>&nbsp;<code>AperiSolve</code>&nbsp;gives solution for 1st,3rd, and the 5th image (provide password/paraphrase wherever required).</li>
+<li><strong>Metadata Analysis:</strong>&nbsp;<code>exiftool</code></li>
+<li><strong>Steganography:</strong>&nbsp;<code>steghide</code></li>
+<li><strong>Image Manipulation:</strong>&nbsp;`ImageMagick``</li>
+</ul>
+<p>This concludes the detailed solution for the Security Cameras challenge. Ensure all tools are installed and accessible before starting the CTF!</p>
+<h3 id="welcome-to-the-professors-communication-challenge">Welcome to “The Professor’s Communication” challenge</h3>
+<p>Welcome to the complete solution guide for the Money Heist-themed “The Professor’s Communications” CTF challenge. This document will walk you through every stage, detailing the puzzles, hints, and solutions, along with the techniques and thought processes required to solve them.</p>
+<h4 id="overview-of-the-challenge"><strong>Overview of the Challenge</strong></h4>
+<h5 id="objective"><strong>Objective</strong>:</h5>
+<p>Players must navigate through various stages, solve encryption-based puzzles, manipulate cookies, and decrypt ciphers to piece together the final flag:</p>
+<p><strong>Final Flag</strong>:&nbsp;<code>secuRIT{M@n1pulate_Th3_H31st_S3cur1ty}</code></p>
+<h5 id="structure"><strong>Structure</strong>:</h5>
+<ol>
+<li>Initial Challenge: MD5 Hash and Robots.txt</li>
+<li>Cookie Manipulation: Unlocking the Admin Panel</li>
+<li>Admin Panel Challenges:
+<ul>
+<li>Book Cipher Puzzle</li>
+<li>QR Code Decoding</li>
+</ul>
+</li>
+<li>Final Challenge: Riddle and Binary Decoding</li>
+</ol>
+<p>Each stage provides either part of the flag or a route to the next challenge.</p>
+<h4 id="detailed-walkthrough"><strong>Detailed Walkthrough</strong></h4>
+<h5 id="initial-challenge"><strong>1. Initial Challenge</strong></h5>
+<h6 id="task"><strong>Task</strong>:</h6>
+<p>Find the MD5 hash of the word “hello” and discover the robots.txt file.</p>
+<h6 id="steps"><strong>Steps</strong>:</h6>
+<ol>
+<li>Players are prompted to compute the MD5 hash of “hello”.
+<ul>
+<li>MD5 hash of “hello”:&nbsp;<code>5d41402abc4b2a76b9719d911017c592</code>.</li>
+</ul>
+</li>
+<li>Submitting the hash reveals a hint to check the&nbsp;<code>/robots.txt</code>&nbsp;file.</li>
+<li>Accessing&nbsp;<code>/robots.txt</code>&nbsp;reveals:
+<ul>
+<li>A secret route:&nbsp;<code>/bella-ciao</code></li>
+<li>Hint: HESIT is the key!<br>
+![[Pasted image 20250115163807.png]]</li>
+</ul>
+</li>
+</ol>
+<h5 id="cookie-manipulation"><strong>2. Cookie Manipulation</strong></h5>
+<h6 id="task-1"><strong>Task</strong>:</h6>
+<p>Manipulate the&nbsp;<code>admin</code>&nbsp;cookie to unlock the Admin Panel.</p>
+<h6 id="steps-1"><strong>Steps</strong>:</h6>
+<ol>
+<li>Visiting&nbsp;<code>/bella-ciao</code>&nbsp;prompts players to set the&nbsp;<code>admin</code>&nbsp;cookie to&nbsp;<code>true</code>.</li>
+<li>Using browser developer tools:
+<ul>
+<li>Open the “Application” tab.</li>
+<li>Edit the&nbsp;<code>admin</code>&nbsp;cookie value to&nbsp;<code>true</code>.</li>
+</ul>
+</li>
+<li>Refreshing the page redirects to the Admin Panel.<br>
+![[Pasted image 20250115163746.png]]</li>
+</ol>
+<h5 id="admin-panel-challenges"><strong>3. Admin Panel Challenges</strong></h5>
+<h6 id="challenge-1-book-cipher-puzzle"><strong>Challenge 1: Book Cipher Puzzle</strong></h6>
+<h6 id="task-2"><strong>Task</strong>:</h6>
+<p>Solve a book cipher using text hosted at&nbsp;<code>/book</code>. Players must extract 5 words to form the solution.</p>
+<h6 id="steps-2"><strong>Steps</strong>:</h6>
+<ol>
+<li>Visit&nbsp;<code>/book/&lt;page&gt;</code>&nbsp;to view the book pages. Example lines:
+<ul>
+<li>Page 1: “The quick brown fox jumps over the lazy dog.”</li>
+<li>Page 2: “In a hole in the ground, there lived a hobbit.”</li>
+<li>Page 3: “It was the best of times, it was the worst of times.”</li>
+<li>Page 4: “Call me Ishmael.”</li>
+<li>Page 5: “To be or not to be, that is the question.”</li>
+</ul>
+</li>
+<li>The cipher provides indices to extract words from specific pages. Example:
+<ul>
+<li>Page 1, Word 2:&nbsp;<code>quick</code></li>
+<li>Page 2, Word 1:&nbsp;<code>hobbit</code></li>
+<li>Page 3, Word 6:&nbsp;<code>times</code></li>
+<li>Page 4, Word 2:&nbsp;<code>Ishmael</code></li>
+<li>Page 5, Word 4:&nbsp;<code>question</code></li>
+</ul>
+</li>
+<li>Solution:&nbsp;<code>quick hobbit times Ishmael question</code></li>
+<li>Submitting this reveals&nbsp;<code>Correct! You've solved the Book Cipher.where does JavaScript print stuff 🤔</code> . 5.first part of the flag is printed onto the console&nbsp;<code>Flag Part 1/3: 'secuRIT{M@n1pulate_'</code><br>
+![[Pasted image 20250115163953.png]]<br>
+![[Pasted image 20250115163959.png]]</li>
+</ol>
+<h6 id="challenge-2-vigenere-cipher"><strong>Challenge 2: Vigenere Cipher</strong></h6>
+<h6 id="task-3"><strong>Task</strong>:</h6>
+<p>Decode a bencoded vigenere Code, using a key and retrieve the next part of the flag.</p>
+<h6 id="steps-3"><strong>Steps</strong>:</h6>
+<ol>
+<li>Key was hinted to the players in the robots.txt =&nbsp;<code>HEIST</code></li>
+<li>The encoded message is given the participants&nbsp;<code>KIKJRWXQGG</code>.</li>
+<li>Use any online decoder and decode the mssage :&nbsp;<code>DECRYPTION</code>.
+<ul>
+<li>submit it to get a secret route&nbsp;<code>route: /admin-panel/final-challenge</code><br>
+![[Pasted image 20250115164035.png]]</li>
+</ul>
+</li>
+</ol>
+<h6 id="challenge-3-qr-code-puzzle"><strong>Challenge 3: QR Code Puzzle</strong></h6>
+<h6 id="task-4"><strong>Task</strong>:</h6>
+<p>Decode a base64-encoded QR Code, scan it, and retrieve the next part of the flag.</p>
+<h6 id="steps-4"><strong>Steps</strong>:</h6>
+<ol>
+<li>Players are given a base64 string representing the QR code.
+<ul>
+<li>Example:&nbsp;<code>iVBORw0KGgoAAAANSUhEUgAA...</code></li>
+</ul>
+</li>
+<li>Decode the base64 string into an image file (using tools like Python or online decoders).</li>
+<li>Scan the QR code using any QR scanner.
+<ul>
+<li>Scanned result reveals:&nbsp;<code>flag part 3/3: S3cur1ty}'</code><br>
+![[Pasted image 20250115164102.png]]</li>
+</ul>
+</li>
+</ol>
+<h5 id="final-challenge"><strong>4. Final Challenge</strong></h5>
+<h6 id="challenge-1-solve-the-riddle"><strong>Challenge 1: Solve the Riddle</strong></h6>
+<h6 id="task-5"><strong>Task</strong>:</h6>
+<p>Solve the riddle to reveal the URL for the next challenge.</p>
+<h6 id="riddle"><strong>Riddle</strong>:</h6>
+<p>“Im always moving, yet I never go anywhere. You can’t buy me, but you can lose me. I’m not something you can catch. What am I”</p>
+<h6 id="solution-13"><strong>Solution</strong>:</h6>
+<ul>
+<li>Answer:&nbsp;<code>Time</code></li>
+<li>Submitting the answer reveals:&nbsp;<code>Coming soon</code></li>
+</ul>
+<h6 id="challenge-2-decode-the-binary"><strong>Challenge 2: Decode the Binary</strong></h6>
+<h6 id="task-6"><strong>Task</strong>:</h6>
+<p>Decode the binary sequence and reveal a crucial password fragment.</p>
+<h6 id="binary"><strong>Binary</strong>:</h6>
+<p><code>01100010 01101001 01101110 01100001 01110010 01111001</code></p>
+<h4 id="steps-5"><strong>Steps</strong>:</h4>
+<ol>
+<li>Convert the binary to text (using ASCII values):
+<ul>
+<li><code>01100010 -&gt; b</code></li>
+<li><code>01101001 -&gt; i</code></li>
+<li><code>01101110 -&gt; n</code></li>
+<li><code>01100001 -&gt; a</code></li>
+<li><code>01110010 -&gt; r</code></li>
+<li><code>01111001 -&gt; y</code></li>
+</ul>
+</li>
+<li>Result:&nbsp;<code>binary</code></li>
+<li>Submitting the answer reveals:&nbsp;<code>2025 is the 2nd part of the password used to unlock hard challenges.</code></li>
+<li>Also reveals the second part of the flag :<code>flag part 2/3: Th3_H31st_</code></li>
+</ol>
+<h5 id="flag-assembly"><strong>Flag Assembly</strong></h5>
+<p>Parts of the flag are collected throughout the challenge:</p>
+<ol>
+<li>From&nbsp;<code>/robots.txt</code>:&nbsp;<code>secuRIT{Th3_Pr0f3ss0r_</code></li>
+<li>From Book Cipher:&nbsp;<code>_US3S_V1g3n3r3_</code></li>
+<li>From QR Code:&nbsp;<code>_F0R_PL4N5!}</code></li>
+</ol>
+<p><strong>Final Flag</strong>:&nbsp;<code>secuRIT{M@n1pulate_Th3_H31st_S3cur1ty}</code></p>
+<h4 id="essential-skills-required"><strong>Essential Skills Required</strong></h4>
+<ol>
+<li>
+<p><strong>Hashing</strong>:</p>
+<ul>
+<li>Compute MD5 hashes using tools like&nbsp;<code>hashlib</code>&nbsp;in Python or online MD5 generators.</li>
+</ul>
+</li>
+<li>
+<p><strong>Cookie Manipulation</strong>:</p>
+<ul>
+<li>Use browser developer tools to edit cookies.</li>
+</ul>
+</li>
+<li>
+<p><strong>Cryptography</strong>:</p>
+<ul>
+<li>Understand and solve Book Cipher and Vigenere Cipher challenges.</li>
+</ul>
+</li>
+<li>
+<p><strong>Binary Decoding</strong>:</p>
+<ul>
+<li>Translate binary sequences into ASCII text.</li>
+</ul>
+</li>
+<li>
+<p><strong>QR Code Decoding</strong>:</p>
+<ul>
+<li>Convert base64-encoded data to an image and scan it.</li>
+</ul>
+</li>
+</ol>
+<h4 id="conclusion-10"><strong>Conclusion</strong></h4>
+<p>“The Professor’s Communications” challenge showcases a blend of problem-solving, cryptography, and web exploitation skills, all wrapped in a captivating Money Heist theme. By progressively increasing difficulty, it ensures an engaging experience for participants, ultimately rewarding them with the complete flag upon successful completion.</p>
+<h3 id="the-final-escape">The Final Escape</h3>
+<h4 id="challenge-overview"><strong>Challenge Overview</strong></h4>
+<p>This challenge is a multi-stage puzzle designed to test participants’ problem-solving, reverse engineering, and cybersecurity skills. The stages are:</p>
+<ol>
+<li><strong>Audio Frequency Analysis + SQL Injection</strong></li>
+<li><strong>Geo Location + Cookies</strong></li>
+<li><strong>Logs + Obfuscated Code</strong></li>
+</ol>
+<p>Each stage reveals a part of the final flag, which is:&nbsp;<code>secuRIT{r0bb3d_4_b4nk_4nd_3sc4p3d_th3_p0l1c3_succ3ssfu11y}</code></p>
+<hr>
+<h4 id="stage-1-audio-frequency-analysis--sql-injection"><strong>Stage 1: Audio Frequency Analysis + SQL Injection</strong></h4>
+<h5 id="challenge-description-6"><strong>Challenge Description</strong></h5>
+<p>Participants are provided with an audio file. After analyzing the file, they extract a keyword that leads them to the next step. The webpage also contains an SQL injection vulnerability as a decoy.</p>
+<h5 id="solution-14"><strong>Solution</strong></h5>
+<ol>
+<li><strong>Audio Analysis</strong>:
+<ul>
+<li>Load the audio file into any frequency analysis tool (e.g., Audacity, Sonic Visualizer).</li>
+<li>Generate a Spectorgram any audio tools loads of thema re available online too. 2.<strong>SQL Injection</strong>:</li>
+<li>On solving the SQL injection we get an image which gives a mapping of Frequency to Alphabet using which we analyse the spectrogram generated. this will give us&nbsp;<strong>FREQUENCY</strong></li>
+</ul>
+</li>
+</ol>
+<p>3.<strong>Input Validation</strong>:</p>
+<ul>
+<li>
+<p>Participants enter the keyword&nbsp;<code>FREQUENCY</code>&nbsp;into the webpage form.</p>
+</li>
+<li>
+<p>On submission, the backend validates the answer and reveals the&nbsp;<strong>first part of the flag</strong>:</p>
+<pre><code>secuRIT{r0bb3ed_4_b4nk_
+</code></pre>
+</li>
+<li>
+<p>A button also appears, directing participants to the&nbsp;<strong>Geo Location + Cookies</strong>&nbsp;stage.</p>
+</li>
+</ul>
+<hr>
+<h4 id="stage-2-geo-location--cookies"><strong>Stage 2: Geo Location + Cookies</strong></h4>
+<h5 id="challenge-description-7"><strong>Challenge Description</strong></h5>
+<p>Participants are directed to a&nbsp;<strong>Geo Puzzle</strong>&nbsp;page. They download a KML file, which contains famous Indian locations. The descriptions hint at cookies. Setting the&nbsp;<code>location</code>&nbsp;cookie to a specific value reveals the next step.</p>
+<h5 id="solution-15"><strong>Solution</strong></h5>
+<ol>
+<li>
+<p><strong>KML File Analysis</strong>:</p>
+<ul>
+<li>Participants open the KML file in any online viewer (e.g., Google Earth).</li>
+<li>The pins mark famous locations in India. One location (e.g.,&nbsp;<strong>Karachi Bakery</strong>, Hyderabad) is famous for cookies. This location is the password.</li>
+</ul>
+</li>
+<li>
+<p><strong>Setting the Cookie</strong>:</p>
+<ul>
+<li>
+<p>Participants set the&nbsp;<code>location</code>&nbsp;cookie in their browser developer tools:</p>
+<pre class=" language-js"><code class="prism  language-js">document<span class="token punctuation">.</span>cookie <span class="token operator">=</span> <span class="token string">"location=MSRIT"</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li>
+<p>The page reloads and reveals the message&nbsp;<code>RUN to CANTEEN</code>&nbsp;where our team will be waiting to give out the&nbsp;<strong>second part of the flag</strong>:</p>
+<pre><code>_4nd_3sc4p3d_th3
+</code></pre>
+</li>
+<li>
+<p>Along with this the route to the next part of the challenge will also be given.</p>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="stage-3-logs--obfuscated-code"><strong>Stage 3: Logs + Obfuscated Code</strong></h4>
+<h5 id="challenge-description-8"><strong>Challenge Description</strong></h5>
+<p>Participants analyze an&nbsp;<code>access.log</code>&nbsp;file and identify a hidden endpoint (<code>/download-script</code>). The downloaded script is obfuscated, requiring reverse engineering to decode the final answer.</p>
+<h5 id="solution-16"><strong>Solution</strong></h5>
+<ol>
+<li>
+<p><strong>Logs File Analysis</strong>:</p>
+<ul>
+<li>Participants are given an&nbsp;<code>access.log</code>&nbsp;file with multiple misleading entries.</li>
+<li>The actual endpoint (<code>/download-script</code>) is hidden among decoy URLs like&nbsp;<code>/downloads/scripts/misc.js</code>&nbsp;and&nbsp;<code>/downloads/script-source</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Accessing the Script</strong>:</p>
+<ul>
+<li>They make a GET request to&nbsp;<code>/download-script</code>&nbsp;(via browser or tools like cURL).</li>
+<li>The obfuscated JavaScript file (<code>encoded_script.js</code>) is downloaded.</li>
+</ul>
+</li>
+<li>
+<p><strong>Decoding the Script</strong>:</p>
+<ul>
+<li>
+<p>The script uses XOR encryption to hide the message. Here’s how it works:</p>
+<pre class=" language-js"><code class="prism  language-js"><span class="token keyword">var</span> _0x7d7b <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token string">"\x24\x37\x29\x29\x25\x2D\x28"</span><span class="token punctuation">,</span> <span class="token comment">// Encoded message</span>
+    <span class="token string">"\x46\x52\x45\x45\x44\x4F\x4D"</span><span class="token punctuation">,</span> <span class="token comment">// FREEDOM</span>
+    <span class="token string">"\x62\x65\x6C\x6C\x61"</span>         <span class="token comment">// bella (key)</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li>
+<p>The encoded message is XOR-decrypted using the key&nbsp;<code>bella</code>. When reversed, the output is:</p>
+<pre><code>FREEDOM
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Submitting the Answer</strong>:</p>
+<ul>
+<li>
+<p>Participants enter&nbsp;<code>FREEDOM</code>&nbsp;on the webpage.</p>
+</li>
+<li>
+<p>The backend validates the answer and reveals the&nbsp;<strong>third part of the flag</strong>:</p>
+<pre><code>_p0l1c3_succ3ssfu11y}
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="final-flag-2"><strong>Final Flag</strong></h4>
+<p>After completing all stages, participants assemble the full flag:</p>
+<pre><code>secuRIT{r0bb3d_4_b4nk_4nd_3sc4p3d_th3_p0l1c3_succ3ssfu11y}
+</code></pre>
+<hr>
+<h4 id="hints-and-tips"><strong>Hints and Tips</strong></h4>
+<ol>
+<li>Use online tools like Audacity, Google Earth, or Base64/XOR decoders for analysis.</li>
+<li>Pay attention to details in the logs and scripts—misleading elements are added to confuse you.</li>
+<li>For the Geo Puzzle, focus on the cookie hints in the descriptions.</li>
+</ol>
+<hr>
+<h4 id="challenge-notes"><strong>Challenge Notes</strong></h4>
+<ul>
+<li>This multi-stage challenge combines various cybersecurity concepts: frequency analysis, SQL injection, file analysis, and reverse engineering.</li>
+<li>It’s designed to teach participants attention to detail and multi-step problem-solving techniques.</li>
+</ul>
+</div>
+</body>
+
+</html>
