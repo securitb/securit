@@ -1064,12 +1064,12 @@ Here, we explain step-by-step solutions for uncovering flag parts and solving th
 
 ##### **Context**
 
-- The second camera feed image (`cam2_route_to_[flag_part2].png`) hints at a dynamic binary puzzle located at `/secret_cameras/flag_part2`.
+- The second camera feed image (`cam2_route_to_[flag_part2].png`) hints at a dynamic binary puzzle located at `/flag_part2`.
 
 ##### **Solution**
 1. **Access the Puzzle Page:**
     
-    - Navigate to `/secret_cameras/flag_part2` on the web app.
+    - Navigate to `/flag_part2` on the web app.
 2. **Solve the Binary Puzzle:**
     
     - Flip the binary cells in the interactive grid to form the binary number `10101101`.
@@ -1159,7 +1159,7 @@ flag_part4: _1n_Progress}
 ##### **Solution**
 1. **Equation Analysis:**
     
-    - The equation hinted at in the feed simplifies to coordinates or clues for `/secret_cameras/TheProfessorsCommunications`.
+    - The equation hinted at in the feed simplifies to coordinates or clues for `/ProfessorsCommunications`.
 2. **Solve the Equation:**
     
     - Example equation: `x + y = z`
@@ -1169,7 +1169,7 @@ flag_part4: _1n_Progress}
     - Correct solution reveals:
         
         ```
-        Route to next challenge: /secret_cameras/TheProfessorsCommunications
+        Route to next challenge:/ProfessorsCommunications
         ```
         
 #### **Tools and Commands Recap**
@@ -1270,7 +1270,7 @@ Solve the riddle to reveal the URL for the next challenge.
 "Im always moving, yet I never go anywhere. You can’t buy me, but you can lose me. I’m not something you can catch. What am I"
 ###### **Solution**:
 - Answer: `Time`
-- Submitting the answer reveals: `Coming soon`
+- Submitting the answer reveals: `HEIST_COMPLETED_TIME_TOESCAPE`
 ###### **Challenge 2: Decode the Binary**
 ###### **Task**:
 Decode the binary sequence and reveal a crucial password fragment.
@@ -1289,12 +1289,6 @@ Decode the binary sequence and reveal a crucial password fragment.
 2. Result: `binary`
 3. Submitting the answer reveals: `2025 is the 2nd part of the password used to unlock hard challenges.`
 4. Also reveals the second part of the flag :`flag part 2/3: Th3_H31st_`
-##### **Flag Assembly**
-Parts of the flag are collected throughout the challenge:
-
-1. From `/robots.txt`: `secuRIT{Th3_Pr0f3ss0r_`
-2. From Book Cipher: `_US3S_V1g3n3r3_`
-3. From QR Code: `_F0R_PL4N5!}`
 
 **Final Flag**: `secuRIT{M@n1pulate_Th3_H31st_S3cur1ty}`
 #### **Essential Skills Required**
@@ -1359,7 +1353,7 @@ Participants are directed to a **Geo Puzzle** page. They download a KML file, 
 1. **KML File Analysis**:
     
     - Participants open the KML file in any online viewer (e.g., Google Earth).
-    - The pins mark famous locations in India. One location (e.g., **Karachi Bakery**, Hyderabad) is famous for cookies. This location is the password.
+    - The pins mark famous locations in India. hinting toward something to do with cooies. coordinates locates to MSRIT This location is the password.
 2. **Setting the Cookie**:
     
     - Participants set the `location` cookie in their browser developer tools:
